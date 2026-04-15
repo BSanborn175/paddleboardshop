@@ -1,0 +1,550 @@
+@import "tailwindcss";
+
+/* ============================================================
+   ANTIGRAVITY DESIGN SYSTEM — PADDLEBOARDSHOP.COM
+   Design tokens, base resets, glassmorphism utilities
+   ============================================================ */
+
+:root {
+  /* Core palette */
+  --color-void: #050d1a;
+  --color-deep-ocean: #0a1628;
+  --color-abyss: #0f1e36;
+  --color-surface: #0d2040;
+  --color-glacier-teal: #00c9b1;
+  --color-glacier-teal-dim: #00a896;
+  --color-sky-glow: #38bdf8;
+  --color-amber-glow: #fbbf24;
+
+  /* Glass surfaces */
+  --color-mist: rgba(255, 255, 255, 0.04);
+  --color-mist-hover: rgba(255, 255, 255, 0.07);
+  --color-glass-border: rgba(0, 201, 177, 0.15);
+  --color-glass-border-hover: rgba(0, 201, 177, 0.35);
+
+  /* Text */
+  --color-text-primary: #f0f8ff;
+  --color-text-secondary: #c8dff0;
+  --color-text-muted: #6b8faa;
+
+  /* Font */
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+
+  /* Gradients */
+  --gradient-page: linear-gradient(
+    160deg,
+    #050d1a 0%,
+    #0a1f3d 45%,
+    #062229 100%
+  );
+  --gradient-teal: linear-gradient(135deg, #00c9b1, #38bdf8);
+  --gradient-teal-glow: linear-gradient(135deg, #00c9b180, #38bdf840);
+  --gradient-card: linear-gradient(145deg, rgba(13, 32, 64, 0.6), rgba(5, 13, 26, 0.8));
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  /* Shadows */
+  --shadow-teal-glow: 0 0 40px rgba(0, 201, 177, 0.12);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 16px 48px rgba(0, 201, 177, 0.15), 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* ── Base Reset ──────────────────────────────────────────── */
+/*
+ * IMPORTANT: This block MUST be inside @layer base.
+ *
+ * Tailwind v4 generates its utilities inside @layer utilities.
+ * CSS Cascade Layers rule: unlayered styles beat ALL named layers.
+ * If this reset were unlayered, * { margin: 0; padding: 0 } would
+ * override every Tailwind utility (mx-auto, py-24, mb-12, gap-*, etc.)
+ * because the universal selector is unlayered, regardless of specificity.
+ *
+ * Inside @layer base, utilities from @layer utilities correctly win.
+ * Our custom component classes (.glass-card, .pick-card, etc.) are
+ * intentionally kept unlayered — they always beat Tailwind utilities.
+ */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* desktop nav ~68px */
+  }
+
+  @media (max-width: 767px) {
+    html {
+      scroll-padding-top: 108px; /* mobile nav ~56px brand + ~44px tabs */
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--gradient-page);
+    background-attachment: fixed;
+    color: var(--color-text-primary);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* ── Glassmorphism Utilities ─────────────────────────────── */
+.glass {
+  background: var(--color-mist);
+  border: 1px solid var(--color-glass-border);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+}
+
+.glass-card {
+  background: var(--gradient-card);
+  border: 1px solid var(--color-glass-border);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-lg);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--color-glass-border-hover);
+  box-shadow: var(--shadow-card-hover), 0 0 28px rgba(0, 201, 177, 0.22);
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* ── Gradient Text ───────────────────────────────────────── */
+.gradient-text {
+  background: var(--gradient-teal);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Teal CTA Button ─────────────────────────────────────── */
+.btn-teal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gradient-teal);
+  color: #050d1a;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 20px rgba(0, 201, 177, 0.35);
+}
+
+.btn-teal:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 201, 177, 0.5);
+}
+
+.btn-teal:active {
+  transform: translateY(0);
+}
+
+/* ── Ghost Button ────────────────────────────────────────── */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--color-glacier-teal);
+  font-weight: 600;
+  font-family: var(--font-sans);
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 201, 177, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.btn-ghost:hover {
+  background: rgba(0, 201, 177, 0.08);
+  border-color: var(--color-glacier-teal);
+}
+
+/* ── Score Bar ───────────────────────────────────────────── */
+.score-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--gradient-teal);
+  transform-origin: left;
+}
+
+/* ── Badge Pills ─────────────────────────────────────────── */
+.badge-teal {
+  background: rgba(0, 201, 177, 0.15);
+  color: var(--color-glacier-teal);
+  border: 1px solid rgba(0, 201, 177, 0.3);
+}
+
+.badge-sky {
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--color-sky-glow);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.badge-amber {
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--color-amber-glow);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+/* ── Floating Board Animation ────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50% { transform: translateY(-18px) rotate(1deg); }
+}
+
+.float-anim {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ── Ambient Glow Orbs ───────────────────────────────────── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Divider ─────────────────────────────────────────────── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 201, 177, 0.2), transparent);
+}
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 201, 177, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 201, 177, 0.5);
+}
+
+/* ── Section spacing & centering ────────────────────────── */
+.section-pad {
+  padding: 120px 2rem; /* increased for V2 premium breathing room */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Inner container: constrain width and centre */
+.section-pad > div {
+  width: 100%;
+  max-width: 80rem; /* 1280px — equivalent to max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding: 80px 1.25rem;
+  }
+}
+
+/* ── Section header subtitles — always centred ───────────── */
+/*
+ * padding-bottom (not margin-bottom) is intentional:
+ * padding is immune to CSS margin collapsing, so this space
+ * is always rendered — regardless of the parent div's own
+ * margin-bottom. Fixes subtitle-to-content overlap globally.
+ */
+.section-header-subtitle {
+  text-align: center;
+  max-width: 48rem;        /* max-w-3xl — wider, less cramped line breaks */
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;        /* leading-relaxed — multi-line subtitles breathe */
+  padding-bottom: 2.5rem;  /* 40px guaranteed clearance before content */
+}
+
+/* ── Section header block — subtitle-to-content gap ─────── */
+/*
+ * Applied to the SectionHeader component wrapper.
+ * Pure CSS (not Tailwind utilities) so it is immune to
+ * Tailwind v4 JIT scanning gaps in new component files.
+ * This margin-bottom creates the visual breathing room
+ * between the subtitle and the card/table/grid below it.
+ */
+.section-header-block {
+  margin-bottom: 0;
+  /* Spacing below the header block is now provided by SectionLayout's
+     max-w-3xl wrapper div (mb-12 = 48px). Setting this to 0 prevents
+     double-stacking with that wrapper. Former values: 4rem / 5rem md. */
+}
+
+@media (min-width: 768px) {
+  .section-header-block {
+    margin-bottom: 0;
+  }
+}
+
+/* ── Last section on page — extra bottom clearance ─────── */
+/* Prevents content from sitting too close to the footer    */
+/* or being obscured by any sticky bottom UI.               */
+.section-last {
+  padding-bottom: 10rem;   /* 160px — overrides section-pad's 120px bottom */
+}
+
+/* ── Conversion Pick Card ────────────────────────────────── */
+/* Fully-clickable affiliate card. Used as a block <a> element */
+.pick-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--gradient-card);
+  border: 1px solid var(--color-glass-border);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              transform 0.25s ease;
+}
+
+.pick-card:hover {
+  border-color: var(--color-glass-border-hover);
+  box-shadow: var(--shadow-card-hover), 0 0 36px rgba(0, 201, 177, 0.28);
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Image inside pick-card — subtle zoom on card hover */
+.pick-image {
+  transition: transform 0.55s ease;
+}
+.pick-card:hover .pick-image {
+  transform: scale(1.06);
+}
+
+/* CTA block inside pick-card (div, not a — card is already the anchor) */
+.pick-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: linear-gradient(135deg, #00c9b1, #38bdf8);
+  color: #050d1a;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  padding: 15px 20px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  letter-spacing: 0.015em;
+  box-shadow: 0 4px 18px rgba(0, 201, 177, 0.38);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.pick-card:hover .pick-cta {
+  transform: scale(1.03);
+  box-shadow: 0 8px 30px rgba(0, 201, 177, 0.6);
+}
+
+/* ── Comparison Table Row CTA ────────────────────────────── */
+.table-row-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #00c9b1, #38bdf8);
+  color: #050d1a;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 9px 18px;
+  border-radius: 999px;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 3px 14px rgba(0, 201, 177, 0.35);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.table-row-cta:hover {
+  transform: scale(1.04) translateY(-1px);
+  box-shadow: 0 6px 22px rgba(0, 201, 177, 0.55);
+}
+
+/* ── Floating CTA Button ─────────────────────────────────── */
+@keyframes float-pulse {
+  0%, 100% {
+    box-shadow: 0 4px 22px rgba(0, 201, 177, 0.45);
+  }
+  50% {
+    box-shadow: 0 4px 32px rgba(0, 201, 177, 0.68),
+                0 0 0 8px rgba(0, 201, 177, 0.10);
+  }
+}
+
+.floating-cta-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: linear-gradient(135deg, #00c9b1, #38bdf8);
+  color: #050d1a;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  /* Show/hide via opacity + translateY */
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 2px 10px rgba(0, 201, 177, 0.25);
+  transition: opacity 0.35s ease,
+              transform 0.35s ease,
+              box-shadow 0.2s ease;
+}
+
+.floating-cta-btn.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.floating-cta-btn.is-hidden {
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  animation: none;
+}
+
+/* Pause pulse on hover; apply scale instead */
+.floating-cta-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 4px 14px rgba(0, 201, 177, 0.35);
+}
+
+
+@media (max-width: 640px) {
+  .floating-cta-btn {
+    bottom: 16px;
+    right: 14px;
+    font-size: 0.75rem;
+    padding: 9px 14px;
+  }
+}
+
+
+
+/* ── Article Layout ──────────────────────────────────────── */
+/*
+ * Three layout widths used in blog articles:
+ *   .article-section  — section wrapper with vertical padding
+ *   .article-body     — narrow reading column (max 680px)
+ *   .article-wide     — wider breakout (max 900px) for tables/grids
+ */
+
+.article-section {
+  padding: 64px 1.5rem;
+}
+
+.article-body {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article-wide {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Body text within article */
+.article-body p,
+.article-body li {
+  font-size: 1rem;
+  line-height: 1.78;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.1rem;
+}
+
+.article-body strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* Section headings */
+.article-h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 1.2rem;
+}
+
+/* Lead paragraph — slightly larger */
+.article-lead {
+  font-size: 1.1rem !important;
+  color: var(--color-text-primary) !important;
+  font-weight: 500;
+  line-height: 1.7 !important;
+}
+
+/* Teal inline link */
+.article-link {
+  color: var(--color-glacier-teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: opacity 0.15s ease;
+}
+
+.article-link:hover {
+  opacity: 0.75;
+}
+
+/* ── Table row hover (pure CSS — no JS handlers needed) ─── */
+.table-row-hover {
+  transition: background 0.15s ease;
+}
+.table-row-hover:hover {
+  background: rgba(255, 255, 255, 0.025) !important;
+}
