@@ -76,6 +76,8 @@ export default function PersonaMatch() {
               className="pick-card"
               style={{ borderColor: accentBorder }}
               aria-label={`${label} — ${board.name} — ${board.price}`}
+              data-product={board.name}
+              data-ga-location="persona_match"
             >
               <div className="flex flex-col gap-5 p-7">
 

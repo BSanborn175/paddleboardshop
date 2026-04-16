@@ -49,6 +49,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={plusJakartaSans.variable}>
+      <head>
+        {/* ── Impact.com affiliate network site verification ──────────────
+            Impact.com requires the 'value' attribute (non-standard HTML).
+            Placed directly in <head> JSX because the Next.js metadata API
+            only outputs the standard 'content' attribute.
+            Must load on every page — no conditional logic.
+        ──────────────────────────────────────────────────────────────── */}
+        <meta
+          name="impact-site-verification"
+          {...({ value: 'd7dcfcd7-a512-4ca3-a8e2-4497f8638a87' } as React.HTMLAttributes<HTMLMetaElement>)}
+        />
+      </head>
       <body className="antialiased">
 
         {/* ── Google Analytics 4 ─────────────────────────────────────────
