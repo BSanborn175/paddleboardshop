@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
+import Script from 'next/script';
 import GoogleAnalytics from '@/components/ui/GoogleAnalytics';
 import MicrosoftClarity from '@/components/ui/MicrosoftClarity';
 import AffiliateTracker from '@/components/ui/AffiliateTracker';
@@ -77,6 +78,16 @@ export default function RootLayout({
             Active in all environments so you can test locally.
         ──────────────────────────────────────────────────────────────── */}
         <AffiliateTracker />
+
+        {/* ── AvantLink affiliate network site verification ───────────────
+            Required by AvantLink to confirm site ownership.
+            Uses lazyOnload so it never blocks page rendering.
+            Must be present on the homepage — root layout ensures coverage.
+        ──────────────────────────────────────────────────────────────── */}
+        <Script
+          src="http://classic.avantlink.com/affiliate_app_confirm.php?mode=js&authResponse=dde2d49d483f70965f8aed52aaa4ef603a6ecb29"
+          strategy="lazyOnload"
+        />
 
         {children}
 
