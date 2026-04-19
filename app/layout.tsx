@@ -85,7 +85,7 @@ export default function RootLayout({
             Must be present on the homepage — root layout ensures coverage.
         ──────────────────────────────────────────────────────────────── */}
         <Script
-          src="http://classic.avantlink.com/affiliate_app_confirm.php?mode=js&authResponse=dde2d49d483f70965f8aed52aaa4ef603a6ecb29"
+          src="https://classic.avantlink.com/affiliate_app_confirm.php?mode=js&authResponse=dde2d49d483f70965f8aed52aaa4ef603a6ecb29"
           strategy="lazyOnload"
         />
 
