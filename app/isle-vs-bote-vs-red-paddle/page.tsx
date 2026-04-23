@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -33,6 +34,8 @@ const BRANDS = [
     accentColor: 'var(--color-amber-glow)',
     accentBg: 'rgba(251,191,36,0.08)',
     accentBorder: 'rgba(251,191,36,0.2)',
+    image: '/images/isle-pioneer.jpg',
+    imageAlt: 'Isle Pioneer inflatable paddle board on a calm lake',
     summary:
       'Isle consistently produces boards that balance stability and performance for the widest range of paddlers — from beginners learning their first session to experienced paddlers adding gear and distance to their outings.',
     description: [
@@ -66,6 +69,8 @@ const BRANDS = [
     accentColor: 'var(--color-sky-glow)',
     accentBg: 'rgba(56,189,248,0.08)',
     accentBorder: 'rgba(56,189,248,0.2)',
+    image: '/images/bote-breeze-aero.jpg',
+    imageAlt: 'BOTE Breeze Aero inflatable paddle board on calm water at golden hour',
     summary:
       'BOTE stands out for premium engineering delivered at the most accessible price in this comparison. The MAGNEPOD system and AeroULTRA construction create a board that feels more advanced than boards at the same price from most other brands.',
     description: [
@@ -99,6 +104,8 @@ const BRANDS = [
     accentColor: 'var(--color-glacier-teal)',
     accentBg: 'rgba(0,201,177,0.08)',
     accentBorder: 'rgba(0,201,177,0.2)',
+    image: '/images/red-paddle-co-sport.jpg',
+    imageAlt: 'Red Paddle Co Sport inflatable paddle board on open water for touring',
     summary:
       'Red Paddle Co is the performance benchmark in inflatable paddle boards. The RSS batten system, MSL Fusion construction, and 5-year warranty represent the most advanced engineering in the iSUP category.',
     description: [
@@ -415,7 +422,7 @@ export default function BrandComparisonPage() {
         {/* ════════════════════════════════
             BRAND PROFILES
         ════════════════════════════════ */}
-        {BRANDS.map(({ id, name, affiliateUrl, ctaId, board, headline, accentColor, accentBg, accentBorder, badgeClass, badge, description, strengths, buyIf }) => (
+        {BRANDS.map(({ id, name, affiliateUrl, ctaId, board, headline, accentColor, accentBg, accentBorder, badgeClass, badge, description, strengths, buyIf, image, imageAlt }) => (
           <section
             key={id}
             id={`brand-${id}`}
@@ -423,6 +430,14 @@ export default function BrandComparisonPage() {
             className="article-section"
           >
             <div className="article-body">
+              <Image
+                src={image}
+                alt={imageAlt}
+                width={900}
+                height={500}
+                className="w-full rounded-2xl object-cover mb-6"
+                style={{ maxHeight: '420px' }}
+              />
               <div className="flex items-start gap-3 mb-4">
                 <span className={`${badgeClass} text-xs font-bold px-3 py-1 rounded-full shrink-0`}>{badge}</span>
               </div>
