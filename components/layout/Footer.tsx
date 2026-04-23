@@ -18,7 +18,10 @@ export default function Footer() {
           © {year} PaddleBoardShop. Reviews are independent. Affiliate links
           help support our work at no extra cost to you.
         </p>
-        <nav aria-label="Footer legal links" className="flex items-center gap-4 text-xs text-text-muted">
+        <nav aria-label="Footer links" className="flex items-center gap-4 text-xs text-text-muted flex-wrap justify-center">
+          <Link href="/guides" className="hover:text-teal transition-colors">
+            Guides
+          </Link>
           <Link href="/privacy" className="hover:text-teal transition-colors">
             Privacy &amp; Cookies
           </Link>

@@ -66,6 +66,70 @@ export const AFFILIATE_LINKS: Record<string, string> = {
     // 🔖 TODO: Replace with tagged affiliate URL from YETI affiliate program
     'https://www.yeti.com/bags/bags-accessories/sidekick-dry-6l.html',
 
+  // ── New guide articles — Amazon-tagged URLs ─────────────────────
+  // Used by: /best-inflatable-paddle-boards-under-1000
+  //          /best-paddle-boards-for-fishing
+  // Affiliate tag: paddleboar030-20 (embedded in each URL)
+
+  'bote-breeze-aero-amazon':
+    // BOTE Breeze Aero — Amazon search (both new guide articles)
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=bote+breeze+aero&tag=paddleboar030-20',
+
+  'isle-pioneer-amazon':
+    // Isle Pioneer 10'6" — Amazon search (under-$1000 article)
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=isle+pioneer+paddle+board&tag=paddleboar030-20',
+
+  'roc-sup-amazon':
+    // ROC Inflatable Paddle Board — Amazon search (under-$1000 article)
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=roc+inflatable+paddle+board&tag=paddleboar030-20',
+
+  'isle-pioneer-pro-amazon':
+    // Isle Pioneer Pro — Amazon search (fishing guide)
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=isle+pioneer+pro+paddle+board&tag=paddleboar030-20',
+
+  'funwater-sup-amazon':
+    // FunWater Inflatable SUP — Amazon search (fishing guide)
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=funwater+inflatable+paddle+board&tag=paddleboar030-20',
+
+  'yeti-sidekick-amazon':
+    // YETI Sidekick Dry 6L — Amazon-tagged (fishing accessories)
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=yeti+sidekick+dry+6l&tag=paddleboar030-20',
+
+  'outdoormaster-vortex-amazon':
+    // OutdoorMaster Vortex Pro — Amazon-tagged (fishing accessories)
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=outdoormaster+vortex+pro&tag=paddleboar030-20',
+
+  'carbon-fiber-sup-paddle':
+    // Carbon Fiber SUP Paddle — Amazon search (fishing accessories)
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=carbon+fiber+sup+paddle&tag=paddleboar030-20',
+
+  // ── Brand-level comparison article slugs ─────────────────────
+  // Used by: /isle-vs-bote-vs-red-paddle
+  // Brand search pages — broader than product-specific slugs above.
+
+  'isle-brand-amazon':
+    // Isle Paddle Boards — brand-level Amazon search
+    // 🔖 TODO: Replace with direct category link once confirmed
+    'https://www.amazon.com/s?k=isle+paddle+board&tag=paddleboar030-20',
+
+  'bote-brand-amazon':
+    // BOTE Paddle Boards — brand-level Amazon search
+    // 🔖 TODO: Replace with direct category link once confirmed
+    'https://www.amazon.com/s?k=bote+paddle+board&tag=paddleboar030-20',
+
+  'red-paddle-brand-amazon':
+    // Red Paddle Co Boards — brand-level Amazon search
+    // 🔖 TODO: Replace with direct category link once confirmed
+    'https://www.amazon.com/s?k=red+paddle+co+board&tag=paddleboar030-20',
+
   'outdoormaster-vortex-pro':
     // ✅ VERIFIED 2026-04-16 — Old URL slug 404'd; correct slug includes typo "protable"
     //     (this is OutdoorMaster's actual published product URL — not a typo on our end)

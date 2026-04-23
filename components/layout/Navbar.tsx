@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { Waves, ChevronRight } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Waves, ChevronRight, ChevronDown, BookOpen } from 'lucide-react';
 
 /* ── Tab config ───────────────────────────────────────────────── */
 const TABS = [
@@ -14,6 +14,40 @@ const TABS = [
 
 type TabId = (typeof TABS)[number]['id'];
 
+/* ── Guides dropdown links ────────────────────────────────────── */
+const GUIDE_LINKS = [
+  {
+    href: '/best-inflatable-paddle-boards-under-1000',
+    id: 'nav-guide-under1000',
+    label: 'Best Boards Under $1,000',
+    desc: '2026 Guide',
+  },
+  {
+    href: '/best-paddle-boards-for-fishing',
+    id: 'nav-guide-fishing',
+    label: 'Best Boards for Fishing',
+    desc: "2026 Buyer's Guide",
+  },
+  {
+    href: '/best-paddle-boards-for-beginners',
+    id: 'nav-guide-beginners',
+    label: 'Best Boards for Beginners',
+    desc: '2026 Complete Guide',
+  },
+  {
+    href: '/isle-vs-bote-vs-red-paddle',
+    id: 'nav-guide-brand-comparison',
+    label: 'Isle vs BOTE vs Red Paddle Co',
+    desc: '2026 Comparison Guide',
+  },
+  {
+    href: '/guides',
+    id: 'nav-guides-all',
+    label: 'All Guides',
+    desc: 'View full library',
+  },
+] as const;
+
 /* ── Helpers ──────────────────────────────────────────────────── */
 function scrollToSection(id: string) {
   const el = document.getElementById(id);
@@ -22,8 +56,10 @@ function scrollToSection(id: string) {
 
 /* ── Component ────────────────────────────────────────────────── */
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [activeTab, setActiveTab] = useState<TabId>('top-picks');
+  const [scrolled, setScrolled]         = useState(false);
+  const [activeTab, setActiveTab]       = useState<TabId>('top-picks');
+  const [guidesOpen, setGuidesOpen]     = useState(false);
+  const guidesRef                       = useRef<HTMLDivElement>(null);
 
   /* Glass FX on scroll */
   useEffect(() => {
@@ -41,7 +77,6 @@ export default function Navbar() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        // Pick the intersecting entry that is highest on the page
         const visible = entries
           .filter((e) => e.isIntersecting)
           .sort((a, b) => {
@@ -59,6 +94,17 @@ export default function Navbar() {
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
   }, []);
+
+  /* Close guides dropdown on outside click */
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (guidesRef.current && !guidesRef.current.contains(e.target as Node)) {
+        setGuidesOpen(false);
+      }
+    }
+    if (guidesOpen) document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [guidesOpen]);
 
   const handleTabClick = (id: TabId) => {
     setActiveTab(id);
@@ -78,8 +124,8 @@ export default function Navbar() {
         borderBottomColor: scrolled ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0.07)',
       }}
     >
-      {/* ── Desktop: single-row logo | tabs | cta ─────────────── */}
-      <div className="hidden md:flex max-w-7xl mx-auto px-6 h-[68px] items-center justify-between gap-6">
+      {/* ── Desktop: single-row logo | tabs | guides | cta ────── */}
+      <div className="hidden md:flex max-w-7xl mx-auto px-6 h-[68px] items-center justify-between gap-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0 group">
           <div className="w-8 h-8 rounded-lg bg-gradient-teal flex items-center justify-center shadow-teal-strong">
@@ -135,6 +181,84 @@ export default function Navbar() {
           })}
         </div>
 
+        {/* ── Guides dropdown ─────────────────────────────────── */}
+        <div ref={guidesRef} className="relative">
+          <button
+            id="nav-guides-toggle"
+            onClick={() => setGuidesOpen((o) => !o)}
+            aria-expanded={guidesOpen}
+            aria-haspopup="true"
+            className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-200 shrink-0"
+            style={
+              guidesOpen
+                ? {
+                    background: 'rgba(0,201,177,0.12)',
+                    color: 'var(--color-glacier-teal)',
+                    border: '1px solid rgba(0,201,177,0.3)',
+                  }
+                : {
+                    color: 'var(--color-text-secondary)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                  }
+            }
+            onMouseEnter={(e) => {
+              if (!guidesOpen)
+                (e.currentTarget as HTMLElement).style.color =
+                  'var(--color-text-primary)';
+            }}
+            onMouseLeave={(e) => {
+              if (!guidesOpen)
+                (e.currentTarget as HTMLElement).style.color =
+                  'var(--color-text-secondary)';
+            }}
+          >
+            Guides
+            <ChevronDown
+              className="w-3.5 h-3.5 transition-transform duration-200"
+              style={{ transform: guidesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+            />
+          </button>
+
+          {guidesOpen && (
+            <div
+              className="absolute top-full left-1/2 -translate-x-1/2 mt-3 glass-card overflow-hidden z-50"
+              style={{
+                minWidth: '260px',
+                borderColor: 'rgba(0,201,177,0.2)',
+              }}
+            >
+              {GUIDE_LINKS.map(({ href, id, label, desc }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  id={id}
+                  onClick={() => setGuidesOpen(false)}
+                  className="flex items-start gap-3 px-5 py-3 text-sm transition-colors"
+                  style={{ textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.05)' }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.04)';
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.background = 'transparent';
+                  }}
+                >
+                  <BookOpen
+                    className="w-3.5 h-3.5 shrink-0 mt-0.5"
+                    style={{ color: 'var(--color-glacier-teal)' }}
+                    aria-hidden="true"
+                  />
+                  <div>
+                    <p className="font-semibold text-text-primary leading-tight">
+                      {label}
+                    </p>
+                    <p className="text-xs text-text-muted mt-0.5">{desc}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+
         {/* CTA */}
         <a id="nav-cta" href="#top-picks" className="btn-teal text-sm py-2.5 px-5 shrink-0">
           <span>Best Boards 2026</span>
@@ -162,7 +286,7 @@ export default function Navbar() {
               color: '#050d1a',
             }}
           >
-            Best Boards ↗
+            Best Boards &#8599;
           </a>
         </div>
 
@@ -195,6 +319,20 @@ export default function Navbar() {
               </button>
             );
           })}
+
+          {/* Guides link — mobile */}
+          <Link
+            href="/guides"
+            id="tab-mobile-guides"
+            className="px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide whitespace-nowrap shrink-0 transition-all duration-200"
+            style={{
+              color: 'var(--color-glacier-teal)',
+              border: '1px solid rgba(0,201,177,0.25)',
+              textDecoration: 'none',
+            }}
+          >
+            Guides
+          </Link>
         </div>
       </div>
     </nav>
