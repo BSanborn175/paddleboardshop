@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -538,6 +539,14 @@ export default function BeginnerGuide() {
 
             {/* Review 1: BOTE */}
             <article id="review-bote-beginner" aria-labelledby="review-bote-beginner-heading">
+              <Image
+                src="/images/bote-breeze-aero.jpg"
+                alt="BOTE Breeze Aero inflatable paddle board on calm water at golden hour"
+                width={900}
+                height={500}
+                className="w-full rounded-2xl object-cover mb-6"
+                style={{ maxHeight: '400px' }}
+              />
               <div className="flex items-start gap-3 mb-4">
                 <span className="badge-teal text-xs font-bold px-3 py-1 rounded-full shrink-0">Best Overall</span>
                 <span className="text-xs font-bold text-text-muted uppercase tracking-widest pt-1">#1 Pick</span>
@@ -592,6 +601,14 @@ export default function BeginnerGuide() {
 
             {/* Review 2: Isle Pioneer */}
             <article id="review-isle-beginner" aria-labelledby="review-isle-beginner-heading">
+              <Image
+                src="/images/isle-pioneer.jpg"
+                alt="Isle Pioneer inflatable paddle board on a calm lake"
+                width={900}
+                height={500}
+                className="w-full rounded-2xl object-cover mb-6"
+                style={{ maxHeight: '400px' }}
+              />
               <div className="flex items-start gap-3 mb-4">
                 <span className="badge-amber text-xs font-bold px-3 py-1 rounded-full shrink-0">Most Forgiving</span>
                 <span className="text-xs font-bold text-text-muted uppercase tracking-widest pt-1">#2 Pick</span>
@@ -646,6 +663,14 @@ export default function BeginnerGuide() {
 
             {/* Review 3: FunWater */}
             <article id="review-funwater-beginner" aria-labelledby="review-funwater-beginner-heading">
+              <Image
+                src="/images/funwater-sup.jpg"
+                alt="FunWater inflatable paddle board on a sandy river bank"
+                width={900}
+                height={500}
+                className="w-full rounded-2xl object-cover mb-6"
+                style={{ maxHeight: '400px' }}
+              />
               <div className="flex items-start gap-3 mb-4">
                 <span className="badge-sky text-xs font-bold px-3 py-1 rounded-full shrink-0">Budget Entry</span>
                 <span className="text-xs font-bold text-text-muted uppercase tracking-widest pt-1">#3 Pick</span>
