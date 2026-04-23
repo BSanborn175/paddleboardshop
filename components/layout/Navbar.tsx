@@ -41,6 +41,12 @@ const GUIDE_LINKS = [
     desc: '2026 Comparison Guide',
   },
   {
+    href: '/best-paddle-board-accessories',
+    id: 'nav-guide-accessories',
+    label: 'Best SUP Accessories',
+    desc: '2026 Complete Guide',
+  },
+  {
     href: '/guides',
     id: 'nav-guides-all',
     label: 'All Guides',

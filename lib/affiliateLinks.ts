@@ -130,6 +130,87 @@ export const AFFILIATE_LINKS: Record<string, string> = {
     // 🔖 TODO: Replace with direct category link once confirmed
     'https://www.amazon.com/s?k=red+paddle+co+board&tag=paddleboar030-20',
 
+  // ── Electric pump article slugs ───────────────────────────────
+  // Used by: /best-electric-pump-for-paddle-boards
+
+  'seamax-supump-pro':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=seamax+supump+pro&tag=paddleboar030-20',
+
+  'flextail-max-pump':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=flextail+max+pump+2+pro&tag=paddleboar030-20',
+
+  'red-paddle-electric-pump':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=red+paddle+co+electric+pump&tag=paddleboar030-20',
+
+  'irocker-electric-pump':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=irocker+electric+pump&tag=paddleboar030-20',
+
+  // ── Paddle article slugs ──────────────────────────────────────
+  // Used by: /best-paddle-board-paddles
+
+  'werner-camano-paddle':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=werner+camano+sup+paddle&tag=paddleboar030-20',
+
+  'aqua-bound-manta-ray':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=aqua+bound+manta+ray+carbon+sup&tag=paddleboar030-20',
+
+  'bote-rover-paddle':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=bote+rover+aero+paddle&tag=paddleboar030-20',
+
+  'gili-carbon-paddle':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=gili+carbon+fiber+sup+paddle&tag=paddleboar030-20',
+
+  'bending-branches-whiskey':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=bending+branches+whiskey+carbon+sup+paddle&tag=paddleboar030-20',
+
+  // ── Accessories roundup slugs ─────────────────────────────────
+  // Used by: /best-paddle-board-accessories
+
+  'yeti-hopper-flip-8':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=yeti+hopper+flip+8&tag=paddleboar030-20',
+
+  'rtic-soft-pack-cooler':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=rtic+soft+pack+cooler&tag=paddleboar030-20',
+
+  'earth-pak-dry-bag':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=earth+pak+waterproof+dry+bag&tag=paddleboar030-20',
+
+  'ho-stevie-sup-leash':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=ho+stevie+sup+leash&tag=paddleboar030-20',
+
+  'onyx-movevent-pfd':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=onyx+movevent+dynamic+pfd&tag=paddleboar030-20',
+
+  'gopro-hero-13':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=gopro+hero+13+black&tag=paddleboar030-20',
+
+  'ram-mounts-sup':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=ram+mounts+sup+phone+mount&tag=paddleboar030-20',
+
+  'creatures-stomp-pad':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=creatures+of+leisure+sup+stomp+pad&tag=paddleboar030-20',
+
+  'fcs-h4-sup-fin':
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=fcs+h4+sup+fin&tag=paddleboar030-20',
+
   'outdoormaster-vortex-pro':
     // ✅ VERIFIED 2026-04-16 — Old URL slug 404'd; correct slug includes typo "protable"
     //     (this is OutdoorMaster's actual published product URL — not a typo on our end)

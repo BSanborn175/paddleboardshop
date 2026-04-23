@@ -13,6 +13,39 @@ export const metadata: Metadata = {
 /* ── Guide cards ─────────────────────────────────────────────── */
 const GUIDES = [
   {
+    href: '/best-paddle-board-accessories',
+    id: 'guide-card-accessories',
+    eyebrow: 'Complete Gear Guide · 2026',
+    title: 'Best Paddle Board Accessories',
+    description:
+      '12 essential SUP accessories across 10 categories — pumps, paddles, YETI coolers, dry bags, GoPro, leashes, PFDs, deck pads, fins, and phone mounts.',
+    badge: 'New',
+    badgeClass: 'badge-amber',
+    accentColor: 'var(--color-amber-glow)',
+  },
+  {
+    href: '/best-electric-pump-for-paddle-boards',
+    id: 'guide-card-pump',
+    eyebrow: 'Gear Guide · 2026',
+    title: 'Best Electric Pump for Paddle Boards',
+    description:
+      'OutdoorMaster, Seamax, Flextail, iRocker, and Red Paddle Co — 5 pumps ranked by auto shutoff reliability, inflation speed, and overall value.',
+    badge: 'New',
+    badgeClass: 'badge-teal',
+    accentColor: 'var(--color-glacier-teal)',
+  },
+  {
+    href: '/best-paddle-board-paddles',
+    id: 'guide-card-paddles',
+    eyebrow: 'Gear Guide · 2026',
+    title: 'Best Paddle Board Paddles',
+    description:
+      'Werner, Aqua Bound, Bending Branches, BOTE, and Gili Sports — carbon vs fiberglass explained with full reviews and a sizing guide.',
+    badge: 'New',
+    badgeClass: 'badge-sky',
+    accentColor: 'var(--color-sky-glow)',
+  },
+  {
     href: '/best-paddle-boards-for-beginners',
     id: 'guide-card-beginners-complete',
     eyebrow: "Complete Guide · 2026",
