@@ -39,6 +39,8 @@ const PADDLES = [
       'Fiberglass (not full carbon) — slightly heavier than carbon-only alternatives like the Aqua Bound',
     ],
     bottomLine: 'The Werner Camano is the right answer for paddlers who want the best all-around paddle without going to full carbon pricing. Excellent long-session comfort and a brand that holds its value.',
+    image: '/images/werner-camano-paddle.jpg',
+    imageAlt: 'Werner Paddles Camano fiberglass SUP paddle leaning over teal water',
   },
   {
     id: 'aquabound',
@@ -71,6 +73,8 @@ const PADDLES = [
       'Carbon requires more careful handling to avoid blade chip at the edges vs fiberglass',
     ],
     bottomLine: 'The Aqua Bound Manta Ray Carbon is the right upgrade path for paddlers coming from aluminum who want the full weight advantage of carbon without the highest price tier.',
+    image: '/images/aqua-bound-manta-ray.jpg',
+    imageAlt: 'Aqua Bound Manta Ray Carbon full carbon fiber SUP paddle on water',
   },
   {
     id: 'bending',
@@ -86,8 +90,9 @@ const PADDLES = [
     weight: '21 oz',
     bladeType: 'Low-Angle',
     pieces: '2-Piece Adjustable',
-    summary:
-      'Carbon touring paddle designed for distance and consistent stroke efficiency over multiple hours. Natural pairing with the Red Paddle Co Sport for serious touring paddlers.',
+    image: '/images/bending-branches-whiskey.jpg',
+    imageAlt: 'Bending Branches Whiskey Carbon touring SUP paddle on open water',
+    summary: 'Carbon touring paddle designed for distance and consistent stroke efficiency over multiple hours. Natural pairing with the Red Paddle Co Sport for serious touring paddlers.',
     description: [
       "Bending Branches is a respected mid-tier paddle brand with a strong focus on touring design. The Whiskey Carbon is built for paddlers who take long-distance sessions seriously — the carbon shaft maintains rigidity over extended repetitive strokes in a way that mixed-material paddles gradually lose.",
       "The blade geometry leans toward touring efficiency: a slightly narrower surface area generates less resistance per stroke while maintaining power, which translates to better pace-per-effort over long distances. This pairs naturally with the Red Paddle Co Sport 11'3\" reviewed on this site, which has the hull profile designed for exactly this kind of extended touring use.",
@@ -118,8 +123,9 @@ const PADDLES = [
     weight: '23 oz',
     bladeType: 'All-Around',
     pieces: '3-Piece Adjustable',
-    summary:
-      '3-piece adjustable carbon paddle from BOTE — designed to match the BOTE Breeze Aero and the rest of the BOTE lineup. Strong brand integration and the most packable option in this comparison.',
+    image: '/images/bote-rover-paddle.jpg',
+    imageAlt: 'BOTE Rover Aero Carbon 3-piece adjustable SUP paddle disassembled',
+    summary: '3-piece adjustable carbon paddle from BOTE — designed to match the BOTE Breeze Aero and the rest of the BOTE lineup. Strong brand integration and the most packable option in this comparison.',
     description: [
       "The BOTE Rover Aero Carbon is the natural pairing for the BOTE Breeze Aero reviewed on this site. It is the paddle BOTE designs and tests alongside their boards, and the ergonomics and blade geometry reflect that matched development process.",
       "The 3-piece construction is the most packable of any paddle in this comparison — it collapses to a size that fits within the BOTE carry bag alongside the board itself, making it the right choice for paddlers who travel with their board or need compact storage. Carbon construction at the $199 price point makes it strong value in the BOTE ecosystem.",
@@ -150,8 +156,9 @@ const PADDLES = [
     weight: '26 oz',
     bladeType: 'All-Around',
     pieces: '3-Piece Adjustable',
-    summary:
-      'The lowest-cost full carbon paddle in this guide. A meaningful upgrade from aluminum for paddlers not ready to invest in Werner-level pricing.',
+    image: '/images/gili-carbon-paddle.jpg',
+    imageAlt: 'Gili Sports Carbon Fiber SUP paddle on beach shore with ocean background',
+    summary: 'The lowest-cost full carbon paddle in this guide. A meaningful upgrade from aluminum for paddlers not ready to invest in Werner-level pricing.',
     description: [
       "The Gili Sports Carbon Fiber Paddle is the right answer for one type of buyer: someone who knows they want carbon but is not yet ready to commit to the Werner or Aqua Bound price tier. At $99, it is the most accessible entry into carbon construction in this comparison.",
       "The tradeoffs are real: at 26 oz, it is the heaviest paddle in this guide despite its carbon construction — the blade composite is a lower-grade carbon blend that adds weight back. The connection points on the 3-piece design show more flex under hard strokes than the 2-piece designs at higher price tiers. For casual paddlers who want to reduce aluminum weight without the full investment, it works well in that role.",
@@ -400,8 +407,17 @@ export default function PaddleGuide() {
             <h2 id="reviews-paddles-heading" className="article-h2">Full Reviews: All 5 SUP Paddles</h2>
           </div>
           <div className="article-body space-y-14 mt-6">
-            {PADDLES.map(({ id, name, rank, badge, badgeClass, accentColor, affiliateUrl, headline, price, description, pros, cons, bottomLine, material, weight, bladeType, pieces }) => (
+            {PADDLES.map(({ id, name, rank, badge, badgeClass, accentColor, affiliateUrl, headline, price, description, pros, cons, bottomLine, material, weight, bladeType, pieces, image, imageAlt }) => (
               <article key={id} id={`review-paddle-${id}`} aria-labelledby={`review-paddle-${id}-heading`}>
+                {/* Product image */}
+                <Image
+                  src={image}
+                  alt={imageAlt}
+                  width={900}
+                  height={500}
+                  className="product-image"
+                  sizes="(max-width: 768px) 100vw, 680px"
+                />
                 <div className="flex items-center gap-3 mb-3">
                   <span className={`${badgeClass} text-xs font-bold px-3 py-1 rounded-full shrink-0`}>{badge}</span>
                   <span className="text-xs font-bold text-text-muted uppercase tracking-widest">{rank}</span>

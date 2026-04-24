@@ -40,6 +40,8 @@ const PUMPS = [
     ],
     bottomLine:
       'The Vortex Pro is the right choice for most paddlers. It does everything a quality electric pump should, at the lowest price in this comparison.',
+    image: '/images/outdoormaster-vortex-pro.jpg',
+    imageAlt: 'OutdoorMaster Vortex Pro electric SUP pump with digital pressure gauge',
   },
   {
     id: 'seamax',
@@ -56,6 +58,8 @@ const PUMPS = [
     dualAction: 'Yes',
     autoShutoff: 'Yes',
     inflationTime: '~6 min',
+    image: '/images/seamax-supump-pro.jpg',
+    imageAlt: 'Seamax SUPump Pro electric paddle board pump with dual digital PSI display',
     summary:
       'Best-in-class inflation speed with a dual digital display showing real-time and target PSI simultaneously. Worth the premium if you value faster pre-paddle setup.',
     description: [
@@ -90,6 +94,8 @@ const PUMPS = [
     dualAction: 'Yes',
     autoShutoff: 'Yes',
     inflationTime: '~7 min',
+    image: '/images/red-paddle-pump.jpg',
+    imageAlt: 'Red Paddle Co Micro Electric Pump compact premium SUP inflator',
     summary:
       'Designed to pair with Red Paddle Co boards. Premium build, compact form factor, and calibrated for the brand\'s recommended 15 PSI target inflation pressure.',
     description: [
@@ -141,6 +147,8 @@ const PUMPS = [
     ],
     bottomLine:
       'A solid pump for iRocker board owners who want matched-brand gear. For all others, the Vortex Pro delivers the same output at a lower price.',
+    image: '/images/irocker-pump.jpg',
+    imageAlt: 'iRocker Electric Pump mid-range SUP inflator with digital gauge',
   },
   {
     id: 'flextail',
@@ -157,6 +165,8 @@ const PUMPS = [
     dualAction: 'Yes',
     autoShutoff: 'Yes',
     inflationTime: '~12 min',
+    image: '/images/flextail-max-pump.jpg',
+    imageAlt: 'Flextail Max Pump 2 Pro USB-C rechargeable electric SUP pump',
     summary:
       'The only USB-C rechargeable pump in this comparison. Slower than car-powered options but enables inflation anywhere — remote lakes, city launches, or spots requiring a hike.',
     description: [
@@ -407,8 +417,17 @@ export default function ElectricPumpGuide() {
             <h2 id="reviews-pump-heading" className="article-h2">Full Reviews: All 5 Electric SUP Pumps</h2>
           </div>
           <div className="article-body space-y-14 mt-6">
-            {PUMPS.map(({ id, name, rank, badge, badgeClass, accentColor, affiliateUrl, headline, price, description, pros, cons, bottomLine, maxPSI, powerSource, inflationTime }) => (
+            {PUMPS.map(({ id, name, rank, badge, badgeClass, accentColor, affiliateUrl, headline, price, description, pros, cons, bottomLine, maxPSI, powerSource, inflationTime, image, imageAlt }) => (
               <article key={id} id={`review-pump-${id}`} aria-labelledby={`review-pump-${id}-heading`}>
+                {/* Product image */}
+                <Image
+                  src={image}
+                  alt={imageAlt}
+                  width={900}
+                  height={500}
+                  className="product-image"
+                  sizes="(max-width: 768px) 100vw, 680px"
+                />
                 <div className="flex items-center gap-3 mb-3">
                   <span className={`${badgeClass} text-xs font-bold px-3 py-1 rounded-full shrink-0`}>{badge}</span>
                   <span className="text-xs font-bold text-text-muted uppercase tracking-widest">{rank}</span>
