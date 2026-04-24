@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -620,6 +621,15 @@ export default function FishingGuide() {
                 Best Overall Fishing Paddle Board — ~$899
               </p>
 
+              <Image
+                src="/images/bote-breeze-aero-106.png"
+                alt="BOTE Breeze Aero 10'6 inflatable paddle board with paddle and carry bag"
+                width={900}
+                height={500}
+                className="w-full rounded-2xl object-contain mb-6"
+                style={{ maxHeight: '400px', background: 'rgba(5,13,26,0.6)', padding: '16px', borderRadius: '16px' }}
+              />
+
               {BOARDS[0].description.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
@@ -707,6 +717,18 @@ export default function FishingGuide() {
                 style={{ color: 'var(--color-amber-glow)' }}
               >
                 Best for Gear-Heavy Fishing Setups — ~$999
+              </p>
+
+              <Image
+                src="/images/isle-pioneer-pro-106.jpg"
+                alt="Isle Pioneer Pro 10'6 inflatable paddle board complete package with paddle pump fins and carry bag"
+                width={900}
+                height={500}
+                className="w-full rounded-2xl object-cover mb-3"
+                style={{ maxHeight: '400px' }}
+              />
+              <p className="text-sm text-center mb-6" style={{ color: 'var(--color-text-muted)' }}>
+                Includes paddle, pump, fins, carry bag, and optional kayak seat.
               </p>
 
               {BOARDS[1].description.map((para, i) => (
@@ -797,6 +819,15 @@ export default function FishingGuide() {
               >
                 Best Budget Entry for Fishing — ~$149
               </p>
+
+              <Image
+                src="/images/funwater-sup-108.jpg"
+                alt="FunWater inflatable paddle board package with paddle pump and accessories"
+                width={900}
+                height={500}
+                className="w-full rounded-2xl object-cover mb-6"
+                style={{ maxHeight: '400px' }}
+              />
 
               {BOARDS[2].description.map((para, i) => (
                 <p key={i}>{para}</p>

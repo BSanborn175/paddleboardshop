@@ -34,8 +34,8 @@ const BRANDS = [
     accentColor: 'var(--color-amber-glow)',
     accentBg: 'rgba(251,191,36,0.08)',
     accentBorder: 'rgba(251,191,36,0.2)',
-    image: '/images/isle-pioneer.jpg',
-    imageAlt: 'Isle Pioneer inflatable paddle board on a calm lake',
+    image: '/images/isle-pioneer-pro-106.jpg',
+    imageAlt: 'Isle Pioneer Pro 10\'6 inflatable paddle board complete package with paddle pump fins and carry bag',
     summary:
       'Isle consistently produces boards that balance stability and performance for the widest range of paddlers — from beginners learning their first session to experienced paddlers adding gear and distance to their outings.',
     description: [
@@ -69,8 +69,8 @@ const BRANDS = [
     accentColor: 'var(--color-sky-glow)',
     accentBg: 'rgba(56,189,248,0.08)',
     accentBorder: 'rgba(56,189,248,0.2)',
-    image: '/images/bote-breeze-aero.jpg',
-    imageAlt: 'BOTE Breeze Aero inflatable paddle board on calm water at golden hour',
+    image: '/images/bote-breeze-aero-106.png',
+    imageAlt: 'BOTE Breeze Aero 10\'6 inflatable paddle board with paddle and carry bag',
     summary:
       'BOTE stands out for premium engineering delivered at the most accessible price in this comparison. The MAGNEPOD system and AeroULTRA construction create a board that feels more advanced than boards at the same price from most other brands.',
     description: [

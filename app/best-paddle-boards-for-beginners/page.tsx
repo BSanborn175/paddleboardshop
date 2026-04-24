@@ -540,12 +540,12 @@ export default function BeginnerGuide() {
             {/* Review 1: BOTE */}
             <article id="review-bote-beginner" aria-labelledby="review-bote-beginner-heading">
               <Image
-                src="/images/bote-breeze-aero.jpg"
-                alt="BOTE Breeze Aero inflatable paddle board on calm water at golden hour"
+                src="/images/bote-breeze-aero-106.png"
+                alt="BOTE Breeze Aero 10'6 inflatable paddle board with paddle and carry bag"
                 width={900}
                 height={500}
-                className="w-full rounded-2xl object-cover mb-6"
-                style={{ maxHeight: '400px' }}
+                className="w-full rounded-2xl object-contain mb-6"
+                style={{ maxHeight: '400px', background: 'rgba(5,13,26,0.6)', padding: '16px', borderRadius: '16px' }}
               />
               <div className="flex items-start gap-3 mb-4">
                 <span className="badge-teal text-xs font-bold px-3 py-1 rounded-full shrink-0">Best Overall</span>
@@ -602,13 +602,16 @@ export default function BeginnerGuide() {
             {/* Review 2: Isle Pioneer */}
             <article id="review-isle-beginner" aria-labelledby="review-isle-beginner-heading">
               <Image
-                src="/images/isle-pioneer.jpg"
-                alt="Isle Pioneer inflatable paddle board on a calm lake"
+                src="/images/isle-pioneer-pro-106.jpg"
+                alt="Isle Pioneer Pro 10'6 inflatable paddle board complete package with paddle pump fins and carry bag"
                 width={900}
                 height={500}
-                className="w-full rounded-2xl object-cover mb-6"
+                className="w-full rounded-2xl object-cover mb-3"
                 style={{ maxHeight: '400px' }}
               />
+              <p className="text-sm text-center mb-6" style={{ color: 'var(--color-text-muted)' }}>
+                Includes paddle, pump, fins, carry bag, and optional kayak seat.
+              </p>
               <div className="flex items-start gap-3 mb-4">
                 <span className="badge-amber text-xs font-bold px-3 py-1 rounded-full shrink-0">Most Forgiving</span>
                 <span className="text-xs font-bold text-text-muted uppercase tracking-widest pt-1">#2 Pick</span>
@@ -664,8 +667,8 @@ export default function BeginnerGuide() {
             {/* Review 3: FunWater */}
             <article id="review-funwater-beginner" aria-labelledby="review-funwater-beginner-heading">
               <Image
-                src="/images/funwater-sup.jpg"
-                alt="FunWater inflatable paddle board on a sandy river bank"
+                src="/images/funwater-sup-108.jpg"
+                alt="FunWater inflatable paddle board package with paddle pump and accessories"
                 width={900}
                 height={500}
                 className="w-full rounded-2xl object-cover mb-6"
