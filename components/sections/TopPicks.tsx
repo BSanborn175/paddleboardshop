@@ -135,7 +135,7 @@ export default function TopPicks() {
                 aria-label="Review credentials"
               >
                 <span className="text-[10px] font-medium text-text-muted">
-                  🔄 Updated Apr 2026
+                  ✓ Updated Apr 2026
                 </span>
                 <span className="text-text-muted opacity-30" aria-hidden="true">·</span>
                 <span className="text-[10px] font-medium text-text-muted">

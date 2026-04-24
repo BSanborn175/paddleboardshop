@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { ChevronDown, Star } from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -44,12 +44,10 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         {/* Eyebrow */}
-        <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-8">
-          <Star className="w-3.5 h-3.5 text-amber-glow fill-amber-glow" />
+        <div className="inline-flex items-center glass px-4 py-2 rounded-full mb-8">
           <span className="text-xs font-semibold text-text-secondary tracking-widest uppercase">
             2026 Expert iSUP Review Guide
           </span>
-          <Star className="w-3.5 h-3.5 text-amber-glow fill-amber-glow" />
         </div>
 
         {/* Headline */}
@@ -66,7 +64,7 @@ export default function Hero() {
 
         {/* Sub */}
         <p
-          className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed mb-12"
+          className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed mb-10"
           style={{ textShadow: '0 1px 12px rgba(0,0,0,0.35)' }}
         >
           We tested the top high-performance iSUPs on the market — ranking them
@@ -75,6 +73,17 @@ export default function Hero() {
           <strong className="text-white">Weight Capacity</strong> so you
           can invest with confidence.
         </p>
+
+        {/* Primary CTA */}
+        <div className="mb-12">
+          <a
+            href="#top-picks"
+            className="btn-teal inline-flex items-center gap-2 text-base px-8 py-3.5"
+          >
+            <span>See Top 3 Boards</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
 
         {/* Trust signals */}
         <div className="flex items-center justify-center gap-6 flex-wrap">
