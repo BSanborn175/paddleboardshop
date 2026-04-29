@@ -217,4 +217,37 @@ export const AFFILIATE_LINKS: Record<string, string> = {
     // 🔖 TODO: Replace with tagged affiliate URL from OutdoorMaster affiliate program
     'https://outdoormaster.com/products/vortex-pro-rechargeable-and-protable-electric-pump',
 
+  // ── Dog paddleboarding article slugs ─────────────────────────
+  // Used by: /paddleboarding-with-your-dog
+
+  'dog-life-jacket-amazon':
+    // Dog life jacket / PFD for paddleboarding — Amazon search
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=dog+life+jacket+paddleboard&tag=paddleboar030-20',
+
+  'sup-coil-leash-amazon':
+    // Coil SUP leash — recommended for river/flatwater with dogs aboard
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=sup+coil+leash+paddleboard&tag=paddleboar030-20',
+
+  'dog-waterproof-dry-bag-amazon':
+    // Waterproof dry bag for dog supplies, treats, towel on SUP
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=waterproof+dry+bag+10l&tag=paddleboar030-20',
+
+  'non-slip-deck-pad-amazon':
+    // Replacement full-deck traction pad — recommended for dogs to avoid claw slippage
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=sup+full+deck+pad+non+slip&tag=paddleboar030-20',
+
+  'bote-breeze-aero-dog':
+    // BOTE Breeze Aero — recommended board in dog paddleboarding guide
+    // Reuses the existing bote-breeze-aero-amazon slug destination
+    'https://www.amazon.com/s?k=bote+breeze+aero&tag=paddleboar030-20',
+
+  'isle-pioneer-pro-dog':
+    // Isle Pioneer Pro — recommended board in dog paddleboarding guide (high weight cap)
+    // 🔖 TODO: Replace with direct ASIN link once confirmed
+    'https://www.amazon.com/s?k=isle+pioneer+pro+paddle+board&tag=paddleboar030-20',
+
 };
