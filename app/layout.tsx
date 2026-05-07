@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'PaddleBoardShop',
   },
+  verification: {
+    google: 'EaUd7ypSciB0yccfus17PfiUBeT9FfSFY2_WkVc3bQQ',
+  },
 };
 
 export default function RootLayout({
