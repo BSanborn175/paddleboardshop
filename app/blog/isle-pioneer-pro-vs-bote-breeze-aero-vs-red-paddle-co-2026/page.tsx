@@ -197,6 +197,12 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'PaddleBoardShop',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Isle Pioneer Pro vs BOTE Breeze Aero vs Red Paddle Co Sport 2026',
+    description: 'The definitive 2026 iSUP three-way comparison. Category winners, full specs, and a clear final recommendation.',
+    images: ['/images/og-default.png'],
+  },
   alternates: {
     canonical: '/blog/isle-pioneer-pro-vs-bote-breeze-aero-vs-red-paddle-co-2026',
   },

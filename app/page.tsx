@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
@@ -11,19 +11,93 @@ export const metadata: Metadata = {
   title: 'Best Inflatable Paddle Boards 2026 | PaddleBoardShop Expert Reviews',
   description: 'Expert reviews of the best inflatable paddle boards for 2026. Compare the Isle Pioneer Pro, BOTE Breeze Aero, and Red Paddle Co Sport with rigidity scores, weight capacity, and current pricing.',
   keywords: ['best inflatable paddle boards 2026','high performance iSUP reviews','inflatable SUP comparison','Isle Pioneer Pro review','BOTE Breeze Aero review','Red Paddle Co Sport review'],
+  alternates: { canonical: 'https://www.paddleboardshop.com' },
   openGraph: {
     title: 'Best Inflatable Paddle Boards 2026 | PaddleBoardShop',
     description: 'The definitive 2026 guide to high-performance inflatable paddle boards.',
     type: 'website',
     siteName: 'PaddleBoardShop',
+    images: [{ url: '/images/og-default.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Inflatable Paddle Boards 2026 | PaddleBoardShop',
+    description: 'The definitive 2026 guide to high-performance inflatable paddle boards.',
+    images: ['/images/og-default.png'],
   },
 };
 
 const divider = { borderTop: '1px solid rgba(255,255,255,0.05)' };
 
 export default function Home() {
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'PaddleBoardShop',
+    url: 'https://www.paddleboardshop.com',
+    description: 'Expert reviews and buyer guides for inflatable paddle boards — rigidity scores, portability ratings, and independent editorial rankings.',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://www.paddleboardshop.com/?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'PaddleBoardShop',
+    url: 'https://www.paddleboardshop.com',
+    logo: 'https://www.paddleboardshop.com/images/og-default.png',
+    description: 'Independent inflatable paddle board reviews, buyer guides, and product comparisons for 2026.',
+    sameAs: [
+      'https://www.instagram.com/paddleboardshop',
+      'https://www.facebook.com/paddleboardshop',
+      'https://www.youtube.com/@paddleboardshop',
+      'https://www.pinterest.com/paddleboardshop',
+      'https://twitter.com/paddleboardshop',
+    ],
+  };
+
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Best Inflatable Paddle Boards 2026',
+    description: 'Top-ranked inflatable paddle boards for 2026, independently reviewed and scored.',
+    numberOfItems: 3,
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Isle Pioneer Pro 10\'6"',
+        url: 'https://www.paddleboardshop.com/reviews/isle-pioneer-pro',
+        description: 'Editor\'s Choice — 335 lb capacity, ISLE-LINK modular accessories, 9.4/10 rigidity score.',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'BOTE Breeze Aero 10\'8"',
+        url: 'https://www.paddleboardshop.com/reviews/bote-breeze-aero',
+        description: 'Best Value — 17.5 lbs, MAGNEPOD magnetic accessory system, $849.',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Red Paddle Co Sport 11\'3"',
+        url: 'https://www.paddleboardshop.com/reviews/red-paddle-co-sport',
+        description: 'Most Rigid — 9.7/10 rigidity via RSS batten system, MSL Fusion construction, 5-year warranty.',
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <Navbar />
       <main>
 

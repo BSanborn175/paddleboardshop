@@ -109,6 +109,12 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'PaddleBoardShop',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Inflatable Paddle Boards for Beginners 2026 | PaddleBoardShop',
+    description: 'Independently tested. 40+ boards evaluated. 3 made the beginner list. Find your match with real-world scores and current pricing.',
+    images: ['/images/og-default.png'],
+  },
   alternates: {
     canonical: '/blog/best-inflatable-paddle-boards-for-beginners-2026',
   },
@@ -128,7 +134,7 @@ export default function BeginnerGuide() {
     dateModified: '2026-04-15',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://paddleboardshop.com/blog/best-inflatable-paddle-boards-for-beginners-2026',
+      '@id': 'https://www.paddleboardshop.com/blog/best-inflatable-paddle-boards-for-beginners-2026',
     },
   };
 

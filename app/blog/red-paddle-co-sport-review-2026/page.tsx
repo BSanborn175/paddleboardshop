@@ -50,6 +50,12 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'PaddleBoardShop',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Red Paddle Co Sport Review (2026): Most Rigid iSUP We've Tested",
+    description: '9.3/10 overall. 9.7/10 rigidity — the highest score in our 2026 test group. RSS batten system, MSL Fusion construction, 5-year warranty. Independently scored.',
+    images: ['/images/og-default.png'],
+  },
   alternates: { canonical: '/blog/red-paddle-co-sport-review-2026' },
 };
 
@@ -109,8 +115,8 @@ export default function RedPaddleCoSportReview() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'PaddleBoardShop', item: 'https://paddleboardshop.com' },
-      { '@type': 'ListItem', position: 2, name: 'Reviews', item: 'https://paddleboardshop.com/blog' },
+      { '@type': 'ListItem', position: 1, name: 'PaddleBoardShop', item: 'https://www.paddleboardshop.com' },
+      { '@type': 'ListItem', position: 2, name: 'Reviews', item: 'https://www.paddleboardshop.com/blog' },
       { '@type': 'ListItem', position: 3, name: 'Red Paddle Co Sport Review 2026' },
     ],
   };

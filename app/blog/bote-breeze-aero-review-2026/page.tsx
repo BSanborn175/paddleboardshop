@@ -49,6 +49,12 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'PaddleBoardShop',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BOTE Breeze Aero Review (2026): Best Value at $849?',
+    description: '9.2/10 overall. The lightest premium iSUP in our 2026 test group. MAGNEPOD system, 17.5 lbs deflated, 300 lb capacity. Independently scored.',
+    images: ['/images/og-default.png'],
+  },
   alternates: { canonical: '/blog/bote-breeze-aero-review-2026' },
 };
 
@@ -107,8 +113,8 @@ export default function BoteBreezeAeroReview() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'PaddleBoardShop', item: 'https://paddleboardshop.com' },
-      { '@type': 'ListItem', position: 2, name: 'Reviews', item: 'https://paddleboardshop.com/blog' },
+      { '@type': 'ListItem', position: 1, name: 'PaddleBoardShop', item: 'https://www.paddleboardshop.com' },
+      { '@type': 'ListItem', position: 2, name: 'Reviews', item: 'https://www.paddleboardshop.com/blog' },
       { '@type': 'ListItem', position: 3, name: 'BOTE Breeze Aero Review 2026' },
     ],
   };

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle, HelpCircle, BookOpen, Zap, ArrowLeftRight, Scale, Package } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import BreadcrumbJsonLd from '@/components/ui/BreadcrumbJsonLd';
 
 /* ── Pump data ───────────────────────────────────────────────── */
 const PUMPS = [
@@ -259,6 +260,13 @@ export const metadata: Metadata = {
     description: '5 best electric SUP pumps tested — ranked by PSI accuracy, inflation speed, and value.',
     type: 'article',
     siteName: 'PaddleBoardShop',
+    images: [{ url: '/images/og-default.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Electric Pump for Paddle Boards (2026) | PaddleBoardShop',
+    description: '5 best electric SUP pumps tested — ranked by PSI accuracy, inflation speed, and value.',
+    images: ['/images/og-default.png'],
   },
   alternates: { canonical: '/best-electric-pump-for-paddle-boards' },
 };
@@ -289,6 +297,11 @@ export default function ElectricPumpGuide() {
       <Navbar />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BreadcrumbJsonLd items={[
+        { name: 'PaddleBoardShop', item: 'https://www.paddleboardshop.com' },
+        { name: 'Guides', item: 'https://www.paddleboardshop.com/guides' },
+        { name: 'Best Electric Pump for Paddle Boards' },
+      ]} />
 
       <main>
         {/* ── HEADER ── */}

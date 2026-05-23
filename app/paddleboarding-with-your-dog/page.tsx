@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import BreadcrumbJsonLd from '@/components/ui/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Paddleboarding With Your Dog: The Complete 2026 Guide | PaddleBoardShop',
@@ -21,6 +22,12 @@ export const metadata: Metadata = {
     description: 'Gear, training, safety, and the best boards for SUP with your dog in 2026.',
     type: 'article',
     siteName: 'PaddleBoardShop',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Paddleboarding With Your Dog: The Complete 2026 Guide | PaddleBoardShop',
+    description: 'Gear, training, safety, and the best boards for SUP with your dog in 2026.',
+    images: ['/images/og-default.png'],
   },
   alternates: { canonical: '/paddleboarding-with-your-dog' },
 };
@@ -71,6 +78,11 @@ export default function DogPaddleboardingGuide() {
       <Navbar />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BreadcrumbJsonLd items={[
+        { name: 'PaddleBoardShop', item: 'https://www.paddleboardshop.com' },
+        { name: 'Guides', item: 'https://www.paddleboardshop.com/guides' },
+        { name: 'Paddleboarding with Your Dog' },
+      ]} />
       <main>
 
         {/* HEADER */}

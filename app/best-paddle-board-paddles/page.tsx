@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle, HelpCircle, BookOpen, ArrowLeftRight, Scale, Package, Layers } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import BreadcrumbJsonLd from '@/components/ui/BreadcrumbJsonLd';
 
 /* ── Paddle data ─────────────────────────────────────────────── */
 const PADDLES = [
@@ -249,6 +250,13 @@ export const metadata: Metadata = {
     description: '5 best SUP paddles ranked — carbon vs fiberglass, blade shape, and sizing guide.',
     type: 'article',
     siteName: 'PaddleBoardShop',
+    images: [{ url: '/images/og-default.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Paddle Board Paddles (2026) | PaddleBoardShop',
+    description: '5 best SUP paddles ranked — carbon vs fiberglass, blade shape, and sizing guide.',
+    images: ['/images/og-default.png'],
   },
   alternates: { canonical: '/best-paddle-board-paddles' },
 };
@@ -279,6 +287,11 @@ export default function PaddleGuide() {
       <Navbar />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BreadcrumbJsonLd items={[
+        { name: 'PaddleBoardShop', item: 'https://www.paddleboardshop.com' },
+        { name: 'Guides', item: 'https://www.paddleboardshop.com/guides' },
+        { name: 'Best Paddle Board Paddles' },
+      ]} />
 
       <main>
         {/* ── HEADER ── */}

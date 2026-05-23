@@ -22,6 +22,12 @@ export default function Footer() {
           <Link href="/guides" className="hover:text-teal transition-colors">
             Guides
           </Link>
+          <Link href="/blog" className="hover:text-teal transition-colors">
+            Reviews
+          </Link>
+          <Link href="/about" className="hover:text-teal transition-colors">
+            About
+          </Link>
           <Link href="/privacy" className="hover:text-teal transition-colors">
             Privacy &amp; Cookies
           </Link>

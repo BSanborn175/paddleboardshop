@@ -21,6 +21,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.paddleboardshop.com'),
   title: 'Best Inflatable Paddle Boards 2026 | PaddleBoardShop Expert Reviews',
   description:
     'Expert reviews of the best inflatable paddle boards for 2026. Compare the Red Paddle Co Sport, BOTE Breeze Aero, and Isle Pioneer Pro — with rigidity scores, portability ratings, and current pricing.',
@@ -40,6 +41,21 @@ export const metadata: Metadata = {
       'The definitive 2026 guide to high-performance inflatable paddle boards. Rigidity scores, portability ratings, and expert analysis.',
     type: 'website',
     siteName: 'PaddleBoardShop',
+    images: [
+      {
+        url: '/images/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'PaddleBoardShop — Expert Reviews of the Best Inflatable Paddle Boards 2026',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Inflatable Paddle Boards 2026 | PaddleBoardShop',
+    description:
+      'Expert reviews, rigidity scores, and buyer\'s guides for the best inflatable paddle boards in 2026.',
+    images: ['/images/og-default.png'],
   },
   verification: {
     google: 'EaUd7ypSciB0yccfus17PfiUBeT9FfSFY2_WkVc3bQQ',

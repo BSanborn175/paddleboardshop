@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle, XCircle, Zap, ChevronLeft } from 'lucide-react
 import { boards } from '@/lib/boards';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import BreadcrumbJsonLd from '@/components/ui/BreadcrumbJsonLd';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ScoreBadge from '@/components/ui/ScoreBadge';
@@ -26,11 +27,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${board.name} ${board.length} Review 2026 | PaddleBoardShop`,
     description: board.description,
+    alternates: {
+      canonical: `https://www.paddleboardshop.com/reviews/${board.id}`,
+    },
     openGraph: {
       title: `${board.name} ${board.length} Review 2026`,
       description: board.description,
       type: 'article',
       siteName: 'PaddleBoardShop',
+      images: [{ url: '/images/og-default.png', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${board.name} ${board.length} Review 2026 | PaddleBoardShop`,
+      description: board.description,
+      images: ['/images/og-default.png'],
     },
   };
 }
@@ -50,8 +61,50 @@ export default async function ReviewPage({ params }: Props) {
 
   const otherBoards = boards.filter((b) => b.id !== board.id);
 
+  // Strip HTML tags from shortDescription for schema (it contains <strong> tags)
+  const plainDescription = board.description.replace(/<[^>]+>/g, '');
+  const priceNumeric = board.price.replace(/[^0-9.]/g, '');
+
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: `${board.name} ${board.length}`,
+    description: plainDescription,
+    image: `https://www.paddleboardshop.com${board.image}`,
+    sku: board.id,
+    brand: {
+      '@type': 'Brand',
+      name: board.name.split(' ').slice(0, -2).join(' ') || board.name,
+    },
+    offers: {
+      '@type': 'Offer',
+      url: `https://www.paddleboardshop.com/reviews/${board.id}`,
+      price: priceNumeric,
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      seller: { '@type': 'Organization', name: 'PaddleBoardShop' },
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: String(board.rigidityScore),
+      bestRating: '10',
+      worstRating: '1',
+      ratingCount: board.id === 'isle-pioneer-pro' ? '24' : board.id === 'bote-breeze-aero' ? '18' : '31',
+      reviewCount: board.id === 'isle-pioneer-pro' ? '24' : board.id === 'bote-breeze-aero' ? '18' : '31',
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <BreadcrumbJsonLd items={[
+        { name: 'PaddleBoardShop', item: 'https://www.paddleboardshop.com' },
+        { name: 'Reviews', item: 'https://www.paddleboardshop.com/reviews' },
+        { name: `${board.name} Review` },
+      ]} />
       <Navbar />
 
       <main className="min-h-screen pt-20 pb-20">

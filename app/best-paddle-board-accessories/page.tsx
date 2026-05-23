@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle, BookOpen, Zap, Package, Shield, Anchor, ArrowLeftRight } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import BreadcrumbJsonLd from '@/components/ui/BreadcrumbJsonLd';
 
 /* ── Category data ───────────────────────────────────────────── */
 const CATEGORIES = [
@@ -266,7 +267,7 @@ const FAQS = [
 export const metadata: Metadata = {
   title: 'Best Paddle Board Accessories (2026) | PaddleBoardShop',
   description:
-    '12 essential paddle board accessories for 2026 — electric pumps, paddles, YETI coolers, dry bags, GoPro, leashes, PFDs, and more. Ranked by category with Amazon links.',
+    '13 essential paddle board accessories for 2026 — electric pumps, paddles, YETI coolers, dry bags, GoPro, leashes, PFDs, and more. Ranked by category with Amazon links.',
   keywords: [
     'best paddle board accessories',
     'SUP accessories 2026',
@@ -279,9 +280,15 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Best Paddle Board Accessories (2026) | PaddleBoardShop',
-    description: '12 essential SUP accessories — pumps, paddles, YETI coolers, GoPro, leashes, PFDs, and more.',
+    description: '13 essential SUP accessories — pumps, paddles, YETI coolers, GoPro, leashes, PFDs, and more.',
     type: 'article',
     siteName: 'PaddleBoardShop',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Paddle Board Accessories (2026) | PaddleBoardShop',
+    description: '13 essential SUP accessories — pumps, paddles, YETI coolers, GoPro, leashes, PFDs, and more.',
+    images: ['/images/og-default.png'],
   },
   alternates: { canonical: '/best-paddle-board-accessories' },
 };
@@ -312,6 +319,11 @@ export default function AccessoriesGuide() {
       <Navbar />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BreadcrumbJsonLd items={[
+        { name: 'PaddleBoardShop', item: 'https://www.paddleboardshop.com' },
+        { name: 'Guides', item: 'https://www.paddleboardshop.com/guides' },
+        { name: 'Best Paddle Board Accessories' },
+      ]} />
 
       <main>
         {/* ── HEADER ── */}
@@ -338,11 +350,11 @@ export default function AccessoriesGuide() {
             </h1>
 
             <p className="text-lg text-text-secondary leading-relaxed mb-8 max-w-2xl mx-auto">
-              The right accessories extend your session, protect your gear, and make the time on the water more usable. This page covers 12 of them across 10 categories — with a clear top pick for each and a budget-tier kit recommendation at the end.
+              The right accessories extend your session, protect your gear, and make the time on the water more usable. This page covers 13 of them across 10 categories — with a clear top pick for each and a budget-tier kit recommendation at the end.
             </p>
 
             <div className="flex items-center justify-center gap-4 flex-wrap text-xs text-text-muted">
-              {['12 accessories reviewed', '10 categories covered', 'Budget and premium picks', 'Updated April 2026'].map((m) => (
+              {['13 accessories reviewed', '10 categories covered', 'Budget and premium picks', 'Updated April 2026'].map((m) => (
                 <span key={m} className="font-medium">&#x2713; {m}</span>
               ))}
             </div>

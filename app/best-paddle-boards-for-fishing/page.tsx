@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import BreadcrumbJsonLd from '@/components/ui/BreadcrumbJsonLd';
 
 /* ── Board data ──────────────────────────────────────────────── */
 const BOARDS = [
@@ -242,6 +243,12 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'PaddleBoardShop',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Best Paddle Boards for Fishing (2026 Buyer's Guide) | PaddleBoardShop",
+    description: 'Top fishing SUP picks with stability ratings, gear compatibility, and accessory recommendations for 2026.',
+    images: ['/images/og-default.png'],
+  },
   alternates: {
     canonical: '/best-paddle-boards-for-fishing',
   },
@@ -288,6 +295,11 @@ export default function FishingGuide() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <BreadcrumbJsonLd items={[
+        { name: 'PaddleBoardShop', item: 'https://www.paddleboardshop.com' },
+        { name: 'Guides', item: 'https://www.paddleboardshop.com/guides' },
+        { name: 'Best Paddle Boards for Fishing' },
+      ]} />
 
       <main>
 

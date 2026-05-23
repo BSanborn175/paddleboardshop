@@ -12,6 +12,7 @@ import {
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { boards } from '@/lib/boards';
+import BreadcrumbJsonLd from '@/components/ui/BreadcrumbJsonLd';
 
 /* ── Board refs from shared data ─────────────────────────────── */
 const isle = boards.find((b) => b.id === 'isle-pioneer-pro')!;
@@ -179,6 +180,12 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'PaddleBoardShop',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Isle vs BOTE vs Red Paddle Co (2026 Comparison Guide) | PaddleBoardShop',
+    description: 'Which iSUP brand is best in 2026? Rigidity, capacity, portability, and value scored independently.',
+    images: ['/images/og-default.png'],
+  },
   alternates: {
     canonical: '/isle-vs-bote-vs-red-paddle',
   },
@@ -217,6 +224,11 @@ export default function BrandComparisonPage() {
       <Navbar />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BreadcrumbJsonLd items={[
+        { name: 'PaddleBoardShop', item: 'https://www.paddleboardshop.com' },
+        { name: 'Compare', item: 'https://www.paddleboardshop.com/compare' },
+        { name: 'Isle vs BOTE vs Red Paddle Co' },
+      ]} />
 
       <main>
 

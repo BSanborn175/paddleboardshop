@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import BreadcrumbJsonLd from '@/components/ui/BreadcrumbJsonLd';
 
 /* ── Product data ────────────────────────────────────────────── */
 const BOARDS = [
@@ -215,6 +216,13 @@ export const metadata: Metadata = {
       "Three expert picks under $1,000 — with real-world stability ratings, full specs, and current Amazon pricing.",
     type: 'article',
     siteName: 'PaddleBoardShop',
+    images: [{ url: '/images/og-default.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Inflatable Paddle Boards Under $1,000 (2026) | PaddleBoardShop',
+    description: 'Three expert picks under $1,000 — real-world stability ratings and current pricing.',
+    images: ['/images/og-default.png'],
   },
   alternates: {
     canonical: '/best-inflatable-paddle-boards-under-1000',
@@ -263,6 +271,11 @@ export default function Under1000Guide() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <BreadcrumbJsonLd items={[
+        { name: 'PaddleBoardShop', item: 'https://www.paddleboardshop.com' },
+        { name: 'Guides', item: 'https://www.paddleboardshop.com/guides' },
+        { name: 'Best Inflatable Paddle Boards Under $1,000' },
+      ]} />
 
       <main>
 

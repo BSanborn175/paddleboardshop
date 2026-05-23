@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -7,8 +7,9 @@ import { ChevronRight } from 'lucide-react';
 const NAV_LINKS = [
   { href: '/',                                  id: 'nav-home',        label: 'Home'        },
   { href: '/#top-picks',                        id: 'nav-best-boards', label: 'Best Boards' },
-  { href: '/best-paddle-boards-for-fishing',    id: 'nav-fishing',     label: 'Fishing'     },
-  { href: '/best-paddle-boards-for-beginners',  id: 'nav-beginner',    label: 'Beginner'    },
+  { href: '/guides',                            id: 'nav-guides',      label: 'Guides'      },
+  { href: '/blog',                              id: 'nav-reviews',     label: 'Reviews'     },
+  { href: '/best-paddle-boards-for-beginners',  id: 'nav-beginner',    label: 'Beginners'   },
   { href: '/best-paddle-board-accessories',     id: 'nav-accessories', label: 'Accessories' },
 ] as const;
 

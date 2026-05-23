@@ -1,16 +1,15 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
   CheckCircle,
   HelpCircle,
-  ArrowLeftRight,
-  Layers,
-  Scale,
+  Ruler,
+  Weight,
+  ShieldCheck,
   Package,
-  BookOpen,
   AlertTriangle,
+  BookOpen,
 } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -19,181 +18,155 @@ import BreadcrumbJsonLd from '@/components/ui/BreadcrumbJsonLd';
 /* ── Board data ──────────────────────────────────────────────── */
 const BOARDS = [
   {
-    id: 'bote',
-    name: 'BOTE Breeze Aero',
-    length: "10'8\"",
+    id: 'roc',
+    name: 'ROC Inflatable Stand-Up Paddle Board',
+    length: "10'",
     rank: '#1 Pick',
     badge: 'Best Overall',
     badgeClass: 'badge-teal',
     accentColor: 'var(--color-glacier-teal)',
-    affiliateUrl: '/go/bote-breeze-aero-amazon',
-    headline: 'Best Overall for Beginners',
-    price: '~$899',
+    affiliateUrl: '/go/roc-sup-amazon',
+    headline: 'Best Overall for Kids',
+    price: '~$299',
     summary:
-      'The most beginner-friendly premium board in this guide. Stable, lightweight, and designed to grow with you far beyond your first season on the water.',
+      'The top family and kids paddle board on Amazon for good reason — lightweight, wide, and a complete kit straight out of the box. Forgiving stability and 275 lb capacity mean it safely supports any child size.',
     description: [
-      'The BOTE Breeze Aero is the board we recommend to most first-time buyers who ask "what board should I actually get?" It balances the stability beginners need with the construction quality and feature set that makes it worth keeping for years.',
-      'At 33 inches wide and 6 inches thick, the Breeze Aero provides the platform stability that new paddlers depend on during those first few sessions. The AeroULTRA construction keeps the hull rigid under pressure — which means the board behaves consistently whether you are paddling slowly or picking up pace. Boards that flex underfoot are harder to balance on; this one does not.',
-      'What makes it exceptional for beginners specifically is that it does not become obsolete as you improve. The MAGNEPOD accessory system lets you add gear as your use cases expand — fishing kit, yoga mat, water storage — without needing a new board. Most beginner boards get sold within two years when paddlers outgrow them. The Breeze Aero gives you a reason to keep it.',
+      'The ROC Inflatable SUP is the board we point most parents to when they ask what to actually buy for their kids. At roughly 10 feet long and 32 inches wide, it sits in the sweet spot for youth paddlers aged 8 through 16 — wide enough to be genuinely forgiving, short enough that kids can maneuver it without fighting the board.',
+      'What separates the ROC from cheaper alternatives is the complete kit. Every purchase includes an adjustable paddle, manual pump, safety leash, removable fins, and a carry backpack. For a family just getting into paddle boarding, this means zero additional purchases before your first session. The paddle adjusts from youth to adult length, so it genuinely fits the paddler using it.',
+      'The 275 lb weight capacity means even the largest child or smaller adult is operating well below the stability-compromising threshold. A board paddled at 60–70% of its rated capacity sits noticeably higher in the water and resists tipping more readily — and at typical youth weights, the ROC is always operating in that comfortable stability window.',
     ],
     pros: [
-      'AeroULTRA construction maintains rigid platform beginners can balance on confidently',
-      'MAGNEPOD system means the board grows alongside your paddling skills',
-      '17.5 lbs — the lightest board in this guide, easy to carry solo to the water',
-      'All-around hull works on flatwater, rivers, and calm coastal paddling',
+      'Complete kit included — paddle, pump, leash, fins, and carry bag ready on day one',
+      '32-inch width provides a genuinely stable platform for developing young paddlers',
+      '275 lb capacity means kids of any size paddle with a large stability margin',
+      'Adjustable paddle grows with youth paddlers from age 8 through teen years',
     ],
     cons: [
-      '300 lb weight capacity is lower than the Isle Pioneer',
-      'MAGNEPOD accessories purchased separately add to the total cost',
+      'Not a dedicated kids size — slightly long for children under age 8',
+      'Manual pump requires adult assistance for younger children to fully inflate',
     ],
     bottomLine:
-      'The Breeze Aero is the beginner board that earns its keep long after the learning phase ends. Highest overall value for first-time buyers who want one board that lasts.',
+      'The ROC is the clear best choice for families buying one board that works for kids aged 8-16. Complete kit, honest stability, and a price point that removes the financial risk of a new sport.',
   },
   {
-    id: 'isle',
-    name: 'Isle Pioneer',
-    length: "10'6\"",
+    id: 'isle-versa',
+    name: 'Isle Versa',
+    length: "10'",
     rank: '#2 Pick',
-    badge: 'Most Forgiving',
+    badge: 'Most Versatile',
     badgeClass: 'badge-amber',
     accentColor: 'var(--color-amber-glow)',
-    affiliateUrl: '/go/isle-pioneer-amazon',
-    headline: 'Most Forgiving Beginner Board',
-    price: '~$749',
+    affiliateUrl: '/go/isle-versa-amazon',
+    headline: 'Most Versatile Kids & Family Board',
+    price: '~$649',
     summary:
-      'The most beginner-forgiving board in this guide. An extra-wide, stable platform with high weight capacity — ideal for paddlers who want the easiest possible introduction to the sport.',
+      'The board that grows with your child — 10-foot length fits teens and smaller adults, ISLE-LINK accessory compatibility means it evolves with the paddler long past the learning phase.',
     description: [
-      'The Isle Pioneer earns its reputation as one of the most popular beginner boards for one clear reason: it is genuinely forgiving. The wide, flat platform makes it harder to fall off, easier to stand up on, and more confidence-building than narrower designs.',
-      'Its high weight capacity means most paddlers are operating well below maximum load. A board paddled at 60–70% of its weight rating sits higher in the water, resists tipping more readily, and stays more responsive under shifting body weight. That extra margin of stability is exactly what beginners benefit from during the learning curve.',
-      'The construction is straightforward without unnecessary complexity. That simplicity is a real advantage here — fewer components to learn, fewer things to set up incorrectly, and a more durable everyday board that tolerates the minor abuse beginners inevitably deliver during the learning process.',
+      'The Isle Versa earns its place in this guide because it solves the most common kids paddle board problem: outgrowing the board. The 10-foot platform is ideal for teens and tweens who are approaching adult size, and the Isle-LINK accessory system means you can add gear, fishing setups, or yoga mounts as interests evolve.',
+      'Build quality is a significant step above entry-level family boards. The multi-layer PVC construction maintains pressure consistently across long sessions, which matters when kids are actively jumping back on after falls. A board that loses pressure midday becomes harder to balance on — the Isle Versa does not have that problem.',
+      'For families who want one board that carries a teen paddler today and an adult paddler tomorrow, the Versa makes that transition seamlessly. It is narrower than a dedicated kids board but well within the stability range that makes recreational paddling enjoyable for developing paddlers.',
     ],
     pros: [
-      'Wider platform provides more initial stability than most boards at this price',
-      'High weight capacity keeps most paddlers well under the stability-compromising load limit',
-      'Simple, reliable construction with minimal setup complexity',
-      'Very competitive price point for the stability and quality on offer',
+      'ISLE-LINK system allows accessories to be added as skills and use cases grow',
+      'Built to last into adult use — this board does not get outgrown after one season',
+      'Multi-layer PVC construction maintains inflation consistency through full sessions',
+      'Excellent choice for teens and tweens in the 100–180 lb range',
     ],
     cons: [
-      'Wider shape is less agile — progressive paddlers will feel the limitation sooner',
-      'Deck finish quality is a step below the BOTE Breeze Aero',
+      'At $649, premium priced versus the ROC entry pick',
+      'Less beginner-forgiving than the wider ROC for younger or smaller children',
     ],
     bottomLine:
-      'The Isle Pioneer is the right answer if your primary concern is the most forgiving, confidence-building first experience possible. The widest, most stable board in this guide.',
+      'The Isle Versa is the board to buy if you want something that genuinely outlasts the kids phase and transitions to adult use. Built better and priced to last.',
   },
   {
-    id: 'funwater',
-    name: 'FunWater Inflatable SUP',
-    length: "10'8\"",
+    id: 'funwater-youth',
+    name: 'FunWater 8\'6" Youth Board',
+    length: "8'6\"",
     rank: '#3 Pick',
     badge: 'Budget Entry',
     badgeClass: 'badge-sky',
     accentColor: 'var(--color-sky-glow)',
-    affiliateUrl: '/go/funwater-sup-amazon',
-    headline: 'Best Budget Entry for Beginners',
-    price: '~$149',
+    affiliateUrl: '/go/funwater-youth-amazon',
+    headline: 'Best Budget Entry for Younger Kids',
+    price: '~$99',
     summary:
-      'The lowest-cost entry point in this guide. Adequate stability for calm-water beginners — designed for testing the sport before committing to a premium board.',
+      'The only dedicated kids-size board in this guide. At 8\'6" and under 15 lbs, it is the right proportion for children ages 6-12 on calm water — and the lowest-risk way to introduce younger kids to the sport.',
     description: [
-      'The FunWater is the right recommendation for one type of buyer: someone who wants to try paddle boarding before deciding whether they enjoy it enough to invest in a premium board. At this price, the FunWater removes the financial risk entirely.',
-      'On calm, protected water — a still lake, a slow river, a sheltered cove — it provides enough stability for a first-time paddler to stand, balance, and develop the basic technique. It inflates quickly, packs down small, and weighs little. Those basics are what matter if you are testing the sport with no commitment.',
-      'It is important to be honest about the limitations: build quality is below the BOTE and Isle by a significant margin. Expect lower pressure retention over time, a softer platform under load, and a board that will show wear faster than premium alternatives. If you paddle it twice a week through a full summer and want another season out of it, it may disappoint. For occasional calm-water use while you decide if paddling is for you, it is perfectly adequate.',
+      'The FunWater Youth Board is for one specific buyer: the parent of a child aged 6-12 who wants to try paddle boarding on calm water without committing to full adult board pricing. At this size and price, the barrier to entry is as low as it gets.',
+      'The 8\'6" length is genuinely appropriate for younger children in a way that adult boards are not. Shorter boards are easier to control at lower body weights, easier for kids to steer without technique, and — critically — light enough at under 15 lbs that a child can help carry it to the water rather than watching adults do all the work.',
+      'Be realistic about the constraints: this board is designed for calm, protected water — a flat lake or slow river on a still day. It is not suitable for open water, wind, or rough conditions. Build quality is below the ROC and Isle by a meaningful margin. If your child paddles twice a week through the summer and catches the bug, they will outgrow this board in quality terms before they outgrow it in size. For introducing the sport to young children with zero financial risk, it is the right call.',
     ],
     pros: [
-      'Lowest entry cost in the beginner board category',
-      'Adequate for calm-water introductory use',
-      'Lightweight and straightforward to pack, carry, and store',
-      'Zero financial commitment to a sport you may not continue',
+      'Dedicated kids size — 8\'6" is properly proportioned for children ages 6-12',
+      'Under 15 lbs — light enough for children to help carry to the water',
+      'Lowest cost entry point for families testing the sport with young kids',
+      'Appropriate stability for calm, protected water introduction',
     ],
     cons: [
-      'Build quality and pressure retention below premium boards',
-      'Not suitable for open water, wind, or rough conditions',
-      'Softer platform makes technique development harder',
-      'Not a long-term board — expect to upgrade within a season of regular use',
+      'Build quality below the ROC and Isle — not a long-term board',
+      'Calm water only — not suitable for wind, open water, or rough conditions',
+      'Expected to be outgrown in quality terms within one season of regular use',
+      'Not suitable for teens or adult-weight riders',
     ],
     bottomLine:
-      'The FunWater makes sense as a trial purchase only. If you already know you will commit to the sport, the extra investment in BOTE or Isle pays for itself within one season.',
+      'The FunWater Youth Board makes sense as a trial board for younger children on calm water. If your child loves it, the upgrade to ROC or Isle is an easy next step.',
   },
 ] as const;
 
-/* ── Beginner criteria ───────────────────────────────────────── */
+/* ── Buying criteria ─────────────────────────────────────────── */
 const CRITERIA = [
   {
-    Icon: ArrowLeftRight,
-    title: 'Width: 32 Inches or More',
+    Icon: Ruler,
+    title: 'Size for Age and Weight',
     body: (
       <>
-        Width is the single most important stability factor for beginners. Look
-        for a board at least <strong>32 inches wide</strong> — ideally 33
-        inches. A wider board resists tipping when you shift your weight, and
-        makes standing up the first time significantly easier. Narrow boards
-        (30 inches or less) are designed for performance, not learning.
+        Ages 6-12 generally do best on boards{' '}
+        <strong>8&apos;6&quot; to 9&apos;</strong> long. Teens fit boards in
+        the <strong>9&apos;6&quot; to 10&apos;6&quot;</strong> range. A board
+        that is too long for a child is harder to maneuver, harder to carry,
+        and will actively work against confidence-building. Match the board
+        length to the paddler, not the adult doing the buying.
       </>
     ),
   },
   {
-    Icon: Layers,
-    title: 'Thickness: 6 Inches',
+    Icon: Weight,
+    title: 'Weight and Carryability',
     body: (
       <>
-        A <strong>6-inch thick board</strong> creates more hull volume than a
-        4-inch board, which means better buoyancy and a higher, more stable
-        platform. It also holds inflation pressure more consistently over a full
-        session. Boards under 5 inches thick feel softer underfoot — which
-        makes balancing more difficult, not easier.
+        If a child cannot carry the board to the water, paddle boarding becomes
+        an adult production. Look for boards under{' '}
+        <strong>15 lbs for children ages 6-12</strong> and under 20 lbs for
+        teens. A board kids can manage themselves builds independence and makes
+        every session easier for the whole family.
       </>
     ),
   },
   {
-    Icon: Scale,
-    title: 'Length: 10\'6" to 11\'6"',
+    Icon: Ruler,
+    title: 'Stability — Width Matters Most',
     body: (
       <>
-        For most beginners,{' '}
-        <strong>10&apos;6&quot; to 11&apos;6&quot;</strong> is the ideal range.
-        Shorter boards are more maneuverable and easier to transport. Longer
-        boards track straighter and glide more efficiently but require more
-        technique to turn. Start in the middle of this range and adjust as your
-        skills develop.
+        Children are still developing balance and core strength. Look for boards
+        at least <strong>30-32 inches wide</strong> regardless of length. A
+        wider board resists tipping as young paddlers shift weight, makes
+        standing up the first time dramatically easier, and builds confidence
+        rather than frustration during the learning phase.
       </>
     ),
   },
   {
-    Icon: Scale,
-    title: 'Weight Capacity',
+    Icon: ShieldCheck,
+    title: 'Safety — What\'s Included',
     body: (
       <>
-        Never buy a board rated exactly at your body weight. Aim for at least{' '}
-        <strong>50–100 lbs of capacity above your actual weight</strong>. A
-        board operated at its limit sinks lower into the water and becomes
-        noticeably less stable. Extra capacity headroom is extra stability —
-        especially while you are still developing your balance and technique.
-      </>
-    ),
-  },
-  {
-    Icon: Package,
-    title: 'Construction Quality',
-    body: (
-      <>
-        Even for beginners, construction matters. Look for{' '}
-        <strong>high-density drop-stitch cores</strong> and{' '}
-        <strong>multi-layer PVC</strong>. Single-layer budget boards develop
-        softness within months of regular use, which makes them harder to
-        balance on over time. Premium boards stay rigid for multiple seasons.
-      </>
-    ),
-  },
-  {
-    Icon: Package,
-    title: "What's Included",
-    body: (
-      <>
-        A complete beginner kit should include a{' '}
-        <strong>high-volume pump</strong>, a{' '}
-        <strong>padded carry bag</strong>, and a{' '}
-        <strong>fin set</strong>. Boards that require you to buy these
-        separately cost significantly more once you add the total. Factor in
-        the complete cost before comparing prices across boards.
+        At minimum, a kids board should include a{' '}
+        <strong>safety leash</strong> (essential even in shallow water) and be
+        compatible with a properly-fitted{' '}
+        <strong>Coast Guard-approved PFD</strong>. Complete kits with a pump,
+        fins, and bag eliminate the need for separate purchases before your
+        first day on the water.
       </>
     ),
   },
@@ -202,99 +175,93 @@ const CRITERIA = [
 /* ── Common mistakes ─────────────────────────────────────────── */
 const MISTAKES = [
   {
-    title: 'Choosing a Board That Is Too Narrow',
-    body:
-      'Boards under 31 inches wide look sleek but are designed for technique and performance, not beginners. The instability discourages new paddlers before they develop any confidence. Always prioritize width over length or shape for a first board.',
+    title: 'Buying an Adult-Sized Board for a Young Child',
+    body: "A standard 10'6\" adult board weighs 18-22 lbs and is simply too large for children under age 10 to manage comfortably. Heavy boards discourage kids from participating in carrying and setup, and a board that is proportionally too long is harder for lighter riders to control. Always match board size to the child.",
   },
   {
-    title: 'Ignoring Weight Capacity',
-    body:
-      'A board paddled at maximum capacity sits lower in the water and tips much more easily. New paddlers frequently underestimate how much capacity headroom affects real-world stability. Check your weight, add any gear you plan to carry, and leave at least 60–80 lbs of margin.',
+    title: 'Skipping the Leash',
+    body: 'A leash is non-negotiable for children. If a child falls off in open water, an unleashed board can drift away faster than a young swimmer can retrieve it. Always attach the leash before every session, even on calm, shallow water.',
   },
   {
-    title: 'Prioritizing Speed Over Stability',
-    body:
-      'Racing-oriented and touring boards look impressive but have narrower, more performance-tuned hulls. They require established balance and technique to use effectively. Every hour spent fighting instability on the wrong board is an hour not spent actually learning to paddle.',
-  },
-  {
-    title: 'Buying an Unknown Brand for the Lowest Price',
-    body:
-      'Boards from unvetted brands at very low price points frequently have poorly bonded seams, inadequate pump quality, and drop-stitch cores that lose pressure within months. A board that deflates or develops rail softness mid-session will end your session early and discourage you from continuing. The FunWater is the lowest-cost board we recommend — below that price range, quality becomes unreliable.',
+    title: 'Underestimating How Fast Kids Develop',
+    body: "Children improve faster than adults. A board that perfectly fits a 7-year-old today may feel too short within one season as skills and confidence grow. Buying one size up from immediately needed — for example, a 9' for a child who currently fits an 8'6\" — extends the useful life of the board significantly.",
   },
 ] as const;
 
 /* ── FAQ ─────────────────────────────────────────────────────── */
 const FAQS = [
   {
-    q: 'What is the best paddle board for beginners in 2026?',
-    a: "The BOTE Breeze Aero is the best overall beginner paddle board in 2026. It provides the stability beginners need with the construction quality and accessory compatibility (MAGNEPOD) that prevents it from becoming obsolete as your skills develop. For the most forgiving, budget-conscious entry, the Isle Pioneer is the strongest alternative.",
+    q: 'What size paddle board is best for kids?',
+    a: "Ages 6-10 do best on 8'6\"-9' boards. These proportions are genuinely manageable for smaller riders at lower body weights — easier to carry, turn, and control. Teens in the 12-17 range typically fit 10' to 10'6\" boards, which also work well for smaller adults. Matching the board to the paddler's size builds confidence faster than forcing a young child onto full adult equipment.",
   },
   {
-    q: 'What size paddle board is best for beginners?',
-    a: "For most beginners, a board 10'6\" to 11' long, at least 32 inches wide, and 6 inches thick provides the best combination of stability, maneuverability, and buoyancy. Width matters more than length for initial stability — never sacrifice width for a sleeker profile as a first-time buyer.",
+    q: 'At what age can kids start paddle boarding?',
+    a: "Children as young as 5-6 can start on calm, protected water with proper supervision and a properly-fitted PFD. At young ages, many kids start by sitting or kneeling on the board rather than standing — which is completely normal and builds familiarity with balance before attempting to stand. Most children are confidently standing and paddling by age 8-9 with regular exposure.",
   },
   {
-    q: 'How much should a beginner spend on a paddle board?',
-    a: "Beginners who are committed to the sport should budget $700–$900 for a board like the BOTE Breeze Aero or Isle Pioneer. These boards last multiple seasons and grow with your skill level. Spending less on a budget board under $300 can make the learning process harder, as softer platforms are more difficult to balance on. If you are genuinely unsure whether you will continue, the FunWater at ~$149 removes the financial risk.",
+    q: 'Are inflatable paddle boards safe for kids?',
+    a: "Yes — inflatables are actually safer than hardboards for children. When a child falls (and they will), a properly inflated board has some give on impact versus a rigid fiberglass or carbon shell. Inflatables are also lighter and easier for kids to carry, making sessions less of a production. Premium inflatables like the ROC are rigid enough at proper inflation to provide excellent stability without the impact risk of hard boards.",
   },
   {
-    q: 'Are inflatable paddle boards good for beginners?',
-    a: "Yes — inflatable paddle boards are ideal for beginners. They are easier to transport, store, and protect against damage than hardboards. Premium inflatables from BOTE and Isle are rigid enough at full inflation that new paddlers receive no meaningful performance disadvantage compared to hardboards, while gaining significantly easier portability and storage.",
+    q: 'Do kids need a life jacket when paddle boarding?',
+    a: "Yes — always. In the US, the Coast Guard requires approved PFDs for children under 13 on navigable waters, and best practice is to require a PFD regardless of age in open water. Choose a properly-fitted PFD rated for the child's weight, not a generic adult vest. A PFD that does not fit correctly provides significantly reduced protection.",
   },
   {
-    q: 'What is the most important thing to look for in a beginner paddle board?',
-    a: "Width. A board at least 32 inches wide is the single most important specification for beginner stability. All other factors — length, construction, accessories — matter, but no amount of build quality compensates for a platform that is too narrow for a new paddler to balance on comfortably.",
+    q: 'What is the best budget kids paddle board?',
+    a: "The ROC Inflatable SUP at ~$299 is the top pick for families looking for quality at a mid-range price. It includes a complete kit, has legitimate stability for youth paddlers aged 8-16, and is backed by strong Amazon reviews. For children ages 6-12 on a tighter budget, the FunWater 8'6\" at ~$99 is the lowest-risk introduction — appropriate for calm water use while you confirm the sport is a good fit.",
   },
 ] as const;
 
 /* ── SEO metadata ────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: 'Best Paddle Boards for Beginners (2026 Complete Guide) | PaddleBoardShop',
+  title: 'Best Paddle Boards for Kids (2026 Buyer\'s Guide) | PaddleBoardShop',
   description:
-    'Find the best paddle boards for beginners in 2026. Expert picks from BOTE, Isle, and FunWater — with stability tips, buying criteria, and common beginner mistakes to avoid.',
+    'Find the best paddle boards for kids in 2026. Expert picks sized for children and teens — with stability ratings, safety tips, and the right sizing guide for young paddlers.',
   keywords: [
-    'best paddle boards for beginners',
-    'beginner paddle board 2026',
-    'best beginner SUP',
-    'inflatable paddle board for beginners',
-    'BOTE Breeze Aero beginner',
-    'Isle Pioneer beginner paddle board',
-    'beginner stand up paddle board',
-    'beginner iSUP 2026',
+    'best paddle board for kids',
+    'kids paddle board',
+    'paddle board for children 2026',
+    'youth SUP board',
+    'kids inflatable paddle board',
+    'best SUP for kids',
+    'paddle board age 8',
+    'youth stand up paddle board',
   ],
   openGraph: {
-    title: 'Best Paddle Boards for Beginners (2026 Complete Guide) | PaddleBoardShop',
+    title: 'Best Paddle Boards for Kids (2026 Buyer\'s Guide) | PaddleBoardShop',
     description:
-      'Three expert picks for 2026 with stability ratings, buying criteria, and common beginner mistakes to avoid.',
+      'Expert picks sized for children and teens — stability ratings, safety tips, and the right sizing guide for young paddlers.',
     type: 'article',
     siteName: 'PaddleBoardShop',
+    images: [{ url: '/images/og-default.png' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Paddle Boards for Beginners (2026 Complete Guide) | PaddleBoardShop',
-    description: 'Three expert picks for 2026 with stability ratings, buying criteria, and common beginner mistakes to avoid.',
+    title: 'Best Paddle Boards for Kids (2026 Buyer\'s Guide) | PaddleBoardShop',
+    description:
+      'Expert picks sized for children and teens — stability ratings, safety tips, and the right sizing guide for young paddlers.',
     images: ['/images/og-default.png'],
   },
   alternates: {
-    canonical: '/best-paddle-boards-for-beginners',
+    canonical: 'https://www.paddleboardshop.com/paddle-boards-for-kids',
   },
 };
 
 /* ── Page ────────────────────────────────────────────────────── */
-export default function BeginnerGuide() {
+export default function KidsPaddleBoards() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: 'Best Paddle Boards for Beginners (2026 Complete Guide)',
+    headline: "Best Paddle Boards for Kids (2026 Buyer's Guide)",
     description:
-      'Expert picks for the best beginner paddle boards in 2026 — with stability ratings, buying criteria, and common mistakes to avoid.',
+      'Expert picks for the best kids paddle boards in 2026 — with stability ratings, safety tips, and a sizing guide for young paddlers.',
     author: { '@type': 'Organization', name: 'PaddleBoardShop' },
     publisher: { '@type': 'Organization', name: 'PaddleBoardShop' },
-    datePublished: '2026-04-22',
-    dateModified: '2026-04-22',
+    datePublished: '2026-05-01',
+    dateModified: '2026-05-22',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://paddleboardshop.com/best-paddle-boards-for-beginners',
+      '@id': 'https://www.paddleboardshop.com/paddle-boards-for-kids',
     },
   };
 
@@ -322,7 +289,7 @@ export default function BeginnerGuide() {
       <BreadcrumbJsonLd items={[
         { name: 'PaddleBoardShop', item: 'https://www.paddleboardshop.com' },
         { name: 'Guides', item: 'https://www.paddleboardshop.com/guides' },
-        { name: 'Best Paddle Boards for Beginners' },
+        { name: 'Best Paddle Boards for Kids' },
       ]} />
 
       <main>
@@ -336,7 +303,7 @@ export default function BeginnerGuide() {
         >
           <div
             className="orb w-[600px] h-[400px] top-0 left-1/2 -translate-x-1/2"
-            style={{ background: 'rgba(251,191,36,0.05)' }}
+            style={{ background: 'rgba(56,189,248,0.05)' }}
             aria-hidden="true"
           />
           <div className="relative z-10 max-w-3xl mx-auto">
@@ -344,47 +311,46 @@ export default function BeginnerGuide() {
             <nav aria-label="Breadcrumb" className="mb-6">
               <ol className="flex items-center justify-center gap-2 text-xs text-text-muted">
                 <li>
-                  <Link href="/" className="hover:opacity-80 transition-opacity" style={{ color: 'var(--color-glacier-teal)' }}>
+                  <Link href="/" className="hover:opacity-80 transition-opacity" style={{ color: 'var(--color-sky-glow)' }}>
                     PaddleBoardShop
                   </Link>
                 </li>
                 <li aria-hidden="true" className="opacity-40">›</li>
                 <li>
-                  <Link href="/guides" className="hover:opacity-80 transition-opacity" style={{ color: 'var(--color-glacier-teal)' }}>
+                  <Link href="/guides" className="hover:opacity-80 transition-opacity" style={{ color: 'var(--color-sky-glow)' }}>
                     Guides
                   </Link>
                 </li>
                 <li aria-hidden="true" className="opacity-40">›</li>
-                <li className="text-text-secondary" aria-current="page">Best Boards for Beginners</li>
+                <li className="text-text-secondary" aria-current="page">Best Boards for Kids</li>
               </ol>
             </nav>
 
             <span
               className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6"
               style={{
-                background: 'rgba(251,191,36,0.1)',
-                border: '1px solid rgba(251,191,36,0.25)',
-                color: 'var(--color-amber-glow)',
+                background: 'rgba(56,189,248,0.1)',
+                border: '1px solid rgba(56,189,248,0.25)',
+                color: 'var(--color-sky-glow)',
               }}
             >
-              Complete Guide · Updated April 2026
+              Complete Guide · Updated May 2026
             </span>
 
             <h1 className="text-4xl md:text-5xl font-extrabold text-text-primary tracking-tight leading-[1.1] mb-6">
               Best Paddle Boards{' '}
-              <span className="gradient-text">for Beginners</span>
+              <span className="gradient-text">for Kids</span>
             </h1>
 
             <p className="text-lg text-text-secondary leading-relaxed mb-8 max-w-2xl mx-auto">
-              Choosing your first paddle board is harder than it should be. Most
-              guides recommend the wrong specs for beginners, or pick boards that
-              you will outgrow in a season. This guide identifies the three boards
-              that actually build confidence — and explains the four criteria that
-              make all the difference.
+              Most kids paddle board guides recommend adult-sized boards that are
+              too heavy, too long, and too difficult for young paddlers. This guide
+              identifies the three boards actually sized and designed for children —
+              and the four criteria that make all the difference for youth paddlers.
             </p>
 
             <div className="flex items-center justify-center gap-4 flex-wrap text-xs text-text-muted">
-              {['Independent reviews', 'Real-world stability testing', 'No paid placements', 'Updated April 2026'].map((m) => (
+              {['Independent reviews', 'Youth-specific sizing', 'Safety-first picks', 'Updated May 2026'].map((m) => (
                 <span key={m} className="font-medium">&#x2713; {m}</span>
               ))}
             </div>
@@ -397,29 +363,28 @@ export default function BeginnerGuide() {
         <section className="article-section" aria-label="Introduction">
           <div className="article-body">
             <p className="article-lead">
-              In 2026, beginner-friendly inflatable paddle boards have never been
-              better engineered. The challenge is not quality — it is sorting the
-              boards designed for actual beginners from the ones that look
-              appealing but are too narrow, too performance-oriented, or too
-              cheaply built to support early learning effectively.
+              Finding the right paddle board for a child is not the same as finding
+              a beginner board for an adult. Kids need boards that match their
+              weight, arm reach, and developing balance — not a scaled-down version
+              of adult equipment that is still too heavy for a 9-year-old to carry.
             </p>
             <p>
-              Most first-time buyers overestimate how much they care about speed
-              and underestimate how much they care about not falling in. This
-              guide is built around that reality: stability first, everything else
-              second.
+              The most common mistake is buying a standard adult board and assuming
+              the child will grow into it. A 22 lb board is a significant portion
+              of a young child&apos;s body weight, and a board that a kid cannot carry
+              to the water becomes a board the kid does not feel ownership over. The
+              right sizing makes the entire experience more positive.
             </p>
             <p>
               If you want the recommendation immediately,{' '}
               <a href="#quick-answer" className="article-link">
                 jump to the top three picks
               </a>
-              . If you are still evaluating what to look for, the{' '}
+              . If you are evaluating what to look for in a youth board, the{' '}
               <a href="#buying-guide" className="article-link">
                 buying guide below
               </a>{' '}
-              covers the six criteria that actually determine whether a beginner
-              board works.
+              covers the four criteria that determine whether a kids board works.
             </p>
           </div>
         </section>
@@ -430,12 +395,12 @@ export default function BeginnerGuide() {
         <section id="quick-answer" aria-labelledby="quick-answer-heading" className="article-section">
           <div className="article-wide">
             {/* Snippet callout */}
-            <div className="glass-card p-7 mb-12" style={{ borderColor: 'rgba(251,191,36,0.2)' }}>
+            <div className="glass-card p-7 mb-12" style={{ borderColor: 'rgba(56,189,248,0.2)' }}>
               <h2 id="quick-answer-heading" className="text-xl font-extrabold text-text-primary mb-2">
-                Top 3 Beginner Paddle Boards for 2026
+                Top 3 Kids Paddle Boards for 2026
               </h2>
               <p className="text-sm text-text-secondary mb-5">
-                Ranked by stability, beginner-friendliness, and long-term value.
+                Ranked by youth-appropriate sizing, stability, and complete kit value.
               </p>
               <ol className="space-y-3">
                 {BOARDS.map(({ id, name, length, rank, headline, price, accentColor }) => (
@@ -462,7 +427,7 @@ export default function BeginnerGuide() {
                 <a
                   key={id}
                   href={affiliateUrl}
-                  id={`pick-card-beginner-${id}`}
+                  id={`pick-card-kids-${id}`}
                   target="_blank"
                   rel="noopener noreferrer nofollow sponsored"
                   className="pick-card"
@@ -488,7 +453,7 @@ export default function BeginnerGuide() {
                         <ArrowRight className="w-3.5 h-3.5 shrink-0" />
                       </div>
                       <p className="text-[10px] text-text-muted text-center mt-3">
-                        Updated Apr 2026 · Independent Review
+                        Updated May 2026 · Independent Review
                       </p>
                     </div>
                   </div>
@@ -504,13 +469,12 @@ export default function BeginnerGuide() {
         <section id="buying-guide" aria-labelledby="buying-guide-heading" className="article-section">
           <div className="article-body">
             <h2 id="buying-guide-heading" className="article-h2">
-              What Makes a Paddle Board Beginner-Friendly
+              What Makes a Paddle Board Right for Kids
             </h2>
             <p>
-              Most buying guides bury the most important criteria under lengthy
-              brand histories and marketing language. Here are the six
-              specifications that actually determine whether a beginner board
-              works for you — in order of priority.
+              Buying for a child is different from buying for an adult beginner.
+              These four criteria are the ones that actually determine whether a
+              young paddler has a positive first experience — in order of priority.
             </p>
           </div>
 
@@ -520,7 +484,7 @@ export default function BeginnerGuide() {
                 <div key={title} className="glass-card flex items-start gap-5 p-6">
                   <Icon
                     className="w-5 h-5 shrink-0 mt-0.5"
-                    style={{ color: 'var(--color-amber-glow)' }}
+                    style={{ color: 'var(--color-sky-glow)' }}
                     aria-hidden="true"
                   />
                   <div>
@@ -539,36 +503,28 @@ export default function BeginnerGuide() {
         <section id="product-reviews" aria-labelledby="reviews-heading" className="article-section">
           <div className="article-body">
             <h2 id="reviews-heading" className="article-h2">
-              The 3 Best Beginner Paddle Boards for 2026
+              The 3 Best Kids Paddle Boards for 2026
             </h2>
             <p>
-              Full breakdowns of each board — what makes it suitable for
-              beginners, where it excels, and who it is best matched to.
+              Full breakdowns of each board — what makes it suitable for young
+              paddlers, where it excels, and which age range it fits best.
             </p>
           </div>
 
           <div className="article-body space-y-16 mt-8">
 
-            {/* Review 1: BOTE */}
-            <article id="review-bote-beginner" aria-labelledby="review-bote-beginner-heading">
-              <Image
-                src="/images/bote-breeze-aero-106.png"
-                alt="BOTE Breeze Aero 10'6 inflatable paddle board with paddle and carry bag"
-                width={900}
-                height={500}
-                className="w-full rounded-2xl object-contain mb-6"
-                style={{ maxHeight: '400px', background: 'rgba(5,13,26,0.6)', padding: '16px', borderRadius: '16px' }}
-              />
+            {/* Review 1: ROC */}
+            <article id="review-roc-kids" aria-labelledby="review-roc-kids-heading">
               <div className="flex items-start gap-3 mb-4">
                 <span className="badge-teal text-xs font-bold px-3 py-1 rounded-full shrink-0">Best Overall</span>
                 <span className="text-xs font-bold text-text-muted uppercase tracking-widest pt-1">#1 Pick</span>
               </div>
-              <h3 id="review-bote-beginner-heading" className="text-2xl font-extrabold text-text-primary tracking-tight mb-1">
-                BOTE Breeze Aero{' '}
-                <span className="text-text-muted font-medium text-lg">10&apos;8&quot;</span>
+              <h3 id="review-roc-kids-heading" className="text-2xl font-extrabold text-text-primary tracking-tight mb-1">
+                ROC Inflatable Stand-Up Paddle Board{' '}
+                <span className="text-text-muted font-medium text-lg">10&apos;</span>
               </h3>
               <p className="text-sm font-bold mb-4" style={{ color: 'var(--color-glacier-teal)' }}>
-                Best Overall for Beginners — ~$899
+                Best Overall for Kids — ~$299
               </p>
               {BOARDS[0].description.map((para, i) => <p key={i}>{para}</p>)}
               <div className="grid grid-cols-2 gap-5 my-6 glass-card p-6">
@@ -600,40 +556,29 @@ export default function BeginnerGuide() {
               </p>
               <a
                 href={BOARDS[0].affiliateUrl}
-                id="cta-bote-beginner"
+                id="cta-roc-kids"
                 target="_blank"
                 rel="noopener noreferrer nofollow sponsored"
                 className="table-row-cta"
-                aria-label="Check latest price for BOTE Breeze Aero on Amazon"
+                aria-label="Check latest price for ROC Inflatable SUP on Amazon"
               >
                 Check Latest Price on Amazon
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </article>
 
-            {/* Review 2: Isle Pioneer */}
-            <article id="review-isle-beginner" aria-labelledby="review-isle-beginner-heading">
-              <Image
-                src="/images/isle-pioneer-pro-106.jpg"
-                alt="Isle Pioneer Pro 10'6 inflatable paddle board complete package with paddle pump fins and carry bag"
-                width={900}
-                height={500}
-                className="w-full rounded-2xl object-cover mb-3"
-                style={{ maxHeight: '400px' }}
-              />
-              <p className="text-sm text-center mb-6" style={{ color: 'var(--color-text-muted)' }}>
-                Includes paddle, pump, fins, carry bag, and optional kayak seat.
-              </p>
+            {/* Review 2: Isle Versa */}
+            <article id="review-isle-versa-kids" aria-labelledby="review-isle-versa-kids-heading">
               <div className="flex items-start gap-3 mb-4">
-                <span className="badge-amber text-xs font-bold px-3 py-1 rounded-full shrink-0">Most Forgiving</span>
+                <span className="badge-amber text-xs font-bold px-3 py-1 rounded-full shrink-0">Most Versatile</span>
                 <span className="text-xs font-bold text-text-muted uppercase tracking-widest pt-1">#2 Pick</span>
               </div>
-              <h3 id="review-isle-beginner-heading" className="text-2xl font-extrabold text-text-primary tracking-tight mb-1">
-                Isle Pioneer{' '}
-                <span className="text-text-muted font-medium text-lg">10&apos;6&quot;</span>
+              <h3 id="review-isle-versa-kids-heading" className="text-2xl font-extrabold text-text-primary tracking-tight mb-1">
+                Isle Versa{' '}
+                <span className="text-text-muted font-medium text-lg">10&apos;</span>
               </h3>
               <p className="text-sm font-bold mb-4" style={{ color: 'var(--color-amber-glow)' }}>
-                Most Forgiving Beginner Board — ~$749
+                Most Versatile Kids &amp; Family Board — ~$649
               </p>
               {BOARDS[1].description.map((para, i) => <p key={i}>{para}</p>)}
               <div className="grid grid-cols-2 gap-5 my-6 glass-card p-6">
@@ -665,37 +610,29 @@ export default function BeginnerGuide() {
               </p>
               <a
                 href={BOARDS[1].affiliateUrl}
-                id="cta-isle-beginner"
+                id="cta-isle-versa-kids"
                 target="_blank"
                 rel="noopener noreferrer nofollow sponsored"
                 className="table-row-cta"
-                aria-label="Check latest price for Isle Pioneer on Amazon"
+                aria-label="Check latest price for Isle Versa on Amazon"
               >
                 Check Latest Price on Amazon
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </article>
 
-            {/* Review 3: FunWater */}
-            <article id="review-funwater-beginner" aria-labelledby="review-funwater-beginner-heading">
-              <Image
-                src="/images/funwater-sup-108.jpg"
-                alt="FunWater inflatable paddle board package with paddle pump and accessories"
-                width={900}
-                height={500}
-                className="w-full rounded-2xl object-cover mb-6"
-                style={{ maxHeight: '400px' }}
-              />
+            {/* Review 3: FunWater Youth */}
+            <article id="review-funwater-youth-kids" aria-labelledby="review-funwater-youth-kids-heading">
               <div className="flex items-start gap-3 mb-4">
                 <span className="badge-sky text-xs font-bold px-3 py-1 rounded-full shrink-0">Budget Entry</span>
                 <span className="text-xs font-bold text-text-muted uppercase tracking-widest pt-1">#3 Pick</span>
               </div>
-              <h3 id="review-funwater-beginner-heading" className="text-2xl font-extrabold text-text-primary tracking-tight mb-1">
-                FunWater Inflatable SUP{' '}
-                <span className="text-text-muted font-medium text-lg">10&apos;8&quot;</span>
+              <h3 id="review-funwater-youth-kids-heading" className="text-2xl font-extrabold text-text-primary tracking-tight mb-1">
+                FunWater Youth Board{' '}
+                <span className="text-text-muted font-medium text-lg">8&apos;6&quot;</span>
               </h3>
               <p className="text-sm font-bold mb-4" style={{ color: 'var(--color-sky-glow)' }}>
-                Best Budget Entry — ~$149
+                Best Budget Entry for Younger Kids — ~$99
               </p>
               {BOARDS[2].description.map((para, i) => <p key={i}>{para}</p>)}
               <div className="grid grid-cols-2 gap-5 my-6 glass-card p-6">
@@ -727,11 +664,11 @@ export default function BeginnerGuide() {
               </p>
               <a
                 href={BOARDS[2].affiliateUrl}
-                id="cta-funwater-beginner"
+                id="cta-funwater-youth-kids"
                 target="_blank"
                 rel="noopener noreferrer nofollow sponsored"
                 className="table-row-cta"
-                aria-label="Check latest price for FunWater Inflatable SUP on Amazon"
+                aria-label="Check latest price for FunWater Youth Board on Amazon"
               >
                 Check Latest Price on Amazon
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -744,18 +681,18 @@ export default function BeginnerGuide() {
         {/* ════════════════════════════════
             COMPARISON TABLE
         ════════════════════════════════ */}
-        <section id="comparison" aria-labelledby="comparison-beginner-heading" className="article-section">
+        <section id="comparison" aria-labelledby="comparison-kids-heading" className="article-section">
           <div className="article-body">
-            <h2 id="comparison-beginner-heading" className="article-h2">Side-by-Side Comparison</h2>
+            <h2 id="comparison-kids-heading" className="article-h2">Side-by-Side Comparison</h2>
             <p>Key specs for all three boards at a glance. Click any &quot;Check Price&quot; link for current Amazon pricing.</p>
           </div>
           <div className="article-wide mt-8">
             <div className="glass-card overflow-hidden">
               <div className="overflow-x-auto">
-                <table className="w-full text-sm border-collapse" role="table" aria-label="Beginner paddle board comparison 2026">
+                <table className="w-full text-sm border-collapse" role="table" aria-label="Kids paddle board comparison 2026">
                   <thead>
-                    <tr style={{ background: 'rgba(5,13,26,0.90)', borderBottom: '1px solid rgba(251,191,36,0.2)' }}>
-                      {['Board', 'Best For', 'Width', 'Capacity', 'Price', ''].map((h, i) => (
+                    <tr style={{ background: 'rgba(5,13,26,0.90)', borderBottom: '1px solid rgba(56,189,248,0.2)' }}>
+                      {['Board', 'Best Age', 'Width', 'Weight', 'Price', ''].map((h, i) => (
                         <th key={i} scope="col" className="text-left text-[10px] font-bold uppercase tracking-widest text-text-muted px-5 py-4 whitespace-nowrap">
                           {h}
                         </th>
@@ -764,9 +701,9 @@ export default function BeginnerGuide() {
                   </thead>
                   <tbody className="divide-y" style={{ borderColor: 'rgba(255,255,255,0.05)' }}>
                     {[
-                      { name: 'BOTE Breeze Aero', badge: 'Best Overall', badgeClass: 'badge-teal', length: "10'8\"", bestFor: 'Long-term growth', width: '33"', capacity: '300 lbs', price: '~$899', affiliateUrl: '/go/bote-breeze-aero-amazon', ctaId: 'table-bote-beginner' },
-                      { name: 'Isle Pioneer', badge: 'Most Forgiving', badgeClass: 'badge-amber', length: "10'6\"", bestFor: 'Maximum stability', width: '32"', capacity: '275 lbs', price: '~$749', affiliateUrl: '/go/isle-pioneer-amazon', ctaId: 'table-isle-beginner' },
-                      { name: 'FunWater SUP', badge: 'Budget Entry', badgeClass: 'badge-sky', length: "10'8\"", bestFor: 'Trying the sport', width: '32"', capacity: '265 lbs', price: '~$149', affiliateUrl: '/go/funwater-sup-amazon', ctaId: 'table-funwater-beginner' },
+                      { name: 'ROC Inflatable SUP', badge: 'Best Overall', badgeClass: 'badge-teal', length: "10'", bestFor: 'Ages 8–16', width: '32"', weight: '~17 lbs', price: '~$299', affiliateUrl: '/go/roc-sup-amazon', ctaId: 'table-roc-kids' },
+                      { name: 'Isle Versa', badge: 'Most Versatile', badgeClass: 'badge-amber', length: "10'", bestFor: 'Teens & families', width: '32"', weight: '~19 lbs', price: '~$649', affiliateUrl: '/go/isle-versa-amazon', ctaId: 'table-isle-versa-kids' },
+                      { name: 'FunWater Youth', badge: 'Budget Entry', badgeClass: 'badge-sky', length: "8'6\"", bestFor: 'Ages 6–12', width: '30"', weight: '~13 lbs', price: '~$99', affiliateUrl: '/go/funwater-youth-amazon', ctaId: 'table-funwater-youth-kids' },
                     ].map((row) => (
                       <tr key={row.name} className="table-row-hover">
                         <td className="px-5 py-5 min-w-[200px]">
@@ -776,7 +713,7 @@ export default function BeginnerGuide() {
                         </td>
                         <td className="px-5 py-5 text-text-secondary text-xs">{row.bestFor}</td>
                         <td className="px-5 py-5 font-semibold text-text-primary text-sm">{row.width}</td>
-                        <td className="px-5 py-5 font-semibold text-text-primary text-sm">{row.capacity}</td>
+                        <td className="px-5 py-5 font-semibold text-text-primary text-sm">{row.weight}</td>
                         <td className="px-5 py-5 font-bold text-text-primary text-sm">{row.price}</td>
                         <td className="px-5 py-5">
                           <a href={row.affiliateUrl} id={row.ctaId} target="_blank" rel="noopener noreferrer nofollow sponsored" className="table-row-cta" aria-label={`Check latest price for ${row.name}`}>
@@ -795,17 +732,17 @@ export default function BeginnerGuide() {
         {/* ════════════════════════════════
             COMMON MISTAKES
         ════════════════════════════════ */}
-        <section id="common-mistakes" aria-labelledby="mistakes-heading" className="article-section">
+        <section id="common-mistakes" aria-labelledby="mistakes-kids-heading" className="article-section">
           <div className="article-body">
-            <h2 id="mistakes-heading" className="article-h2">Common Beginner Mistakes to Avoid</h2>
+            <h2 id="mistakes-kids-heading" className="article-h2">Common Kids Paddle Board Mistakes to Avoid</h2>
             <p>
-              Most first-time buyers make the same four mistakes. Each one makes
-              the learning process harder than it needs to be.
+              Most parents buying their first kids board make the same three
+              mistakes. Each one makes the experience harder than it needs to be.
             </p>
             <div className="space-y-5 mt-8">
               {MISTAKES.map(({ title, body }) => (
                 <div key={title} className="glass-card flex items-start gap-5 p-6" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
-                  <AlertTriangle className="w-5 h-5 shrink-0 mt-0.5" style={{ color: 'var(--color-amber-glow)' }} aria-hidden="true" />
+                  <AlertTriangle className="w-5 h-5 shrink-0 mt-0.5" style={{ color: 'var(--color-sky-glow)' }} aria-hidden="true" />
                   <div>
                     <h3 className="text-sm font-extrabold text-text-primary mb-2">{title}</h3>
                     <p className="text-sm text-text-secondary leading-relaxed">{body}</p>
@@ -819,9 +756,9 @@ export default function BeginnerGuide() {
         {/* ════════════════════════════════
             FAQ
         ════════════════════════════════ */}
-        <section id="faq" aria-labelledby="faq-beginner-heading" className="article-section">
+        <section id="faq" aria-labelledby="faq-kids-heading" className="article-section">
           <div className="article-body">
-            <h2 id="faq-beginner-heading" className="article-h2">Frequently Asked Questions</h2>
+            <h2 id="faq-kids-heading" className="article-h2">Frequently Asked Questions</h2>
             <div className="space-y-6 mt-6">
               {FAQS.map(({ q, a }) => (
                 <div key={q} className="glass-card p-6" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
@@ -836,15 +773,15 @@ export default function BeginnerGuide() {
         {/* ════════════════════════════════
             RELATED GUIDES
         ════════════════════════════════ */}
-        <section id="related-guides-beginner" aria-labelledby="related-guides-beginner-heading" className="article-section">
+        <section id="related-guides-kids" aria-labelledby="related-guides-kids-heading" className="article-section">
           <div className="article-body">
-            <h2 id="related-guides-beginner-heading" className="article-h2">Related Guides</h2>
-            <p>Ready to go deeper? These guides cover the next most common questions once you have settled on a first board.</p>
+            <h2 id="related-guides-kids-heading" className="article-h2">Related Guides</h2>
+            <p>Ready to go deeper? These guides cover the questions that naturally come next once you have the right board.</p>
             <div className="space-y-4 mt-6">
               {[
-                { href: '/best-inflatable-paddle-boards-under-1000', id: 'link-under1000-from-beginner', title: 'Best Inflatable Paddle Boards Under $1,000 (2026)', desc: 'Budget-specific picks covering BOTE, Isle, and ROC with current Amazon pricing.' },
-                { href: '/isle-vs-bote-vs-red-paddle', id: 'link-brand-compare-from-beginner', title: 'Isle vs BOTE vs Red Paddle Co — Brand Comparison 2026', desc: 'Which brand is actually best? Stability, build quality, and value compared head-to-head.' },
-                { href: '/best-paddle-boards-for-fishing', id: 'link-fishing-from-beginner', title: 'Best Paddle Boards for Fishing (2026)', desc: 'Moving beyond recreation? Fishing-specific stability, rigging, and accessory guide.' },
+                { href: '/best-paddle-boards-for-beginners', id: 'link-beginners-from-kids', title: 'Best Paddle Boards for Beginners (2026)', desc: 'When kids are ready to graduate to adult boards — the top three beginner picks with stability ratings.' },
+                { href: '/what-size-paddle-board-do-i-need', id: 'link-sizing-from-kids', title: 'What Size Paddle Board Do I Need?', desc: 'Full sizing guide covering length, width, and thickness for every body type and skill level.' },
+                { href: '/best-inflatable-paddle-boards-under-1000', id: 'link-under1000-from-kids', title: 'Best Inflatable Paddle Boards Under $1,000 (2026)', desc: 'Budget-specific picks for families ready to upgrade from starter boards to premium inflatables.' },
               ].map(({ href, id, title, desc }) => (
                 <Link key={href} href={href} id={id} className="glass-card flex items-center justify-between p-5 group" style={{ borderColor: 'rgba(255,255,255,0.08)', textDecoration: 'none' }}>
                   <div>
